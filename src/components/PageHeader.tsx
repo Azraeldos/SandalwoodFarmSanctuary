@@ -29,12 +29,17 @@ export function PageHeader({ kicker, title, lede }: PageHeaderProps) {
 export function Section({
   children,
   className = "",
+  id,
 }: {
   children: ReactNode
   className?: string
+  id?: string
 }) {
   return (
-    <section className={`mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 ${className}`}>
+    <section
+      id={id}
+      className={`mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-14 sm:px-6 ${className}`}
+    >
       {children}
     </section>
   )

@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom"
-import { site, socials, visit } from "../data/content"
+import { contactInfo, site, socials, visit } from "../data/content"
 import { Logo } from "./Logo"
 
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-forest/10 bg-forest text-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5">
             <Logo className="h-8 w-8" />
@@ -18,26 +17,43 @@ export function Footer() {
 
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-sage">
-            Visit
+            Hours of operation
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-cream/90">
-            {visit.addressLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
+          <dl className="mt-3 space-y-3 text-sm">
+            {visit.hours.map((row) => (
+              <div key={row.days}>
+                <dt className="text-cream/90">{row.days}</dt>
+                <dd className="text-cream/80">{row.time}</dd>
+              </div>
             ))}
-          </p>
-          <p className="mt-3 text-sm text-cream/80">
-            {visit.hours[0].days}: {visit.hours[0].time}
-          </p>
-          <Link to="/visit" className="mt-3 inline-block text-sm font-medium text-parchment underline-offset-4 hover:underline">
-            Hours and directions
-          </Link>
+          </dl>
         </div>
 
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-sage">
-            Social
+            Contact us
+          </h2>
+          <p className="mt-3 text-sm text-cream/90">
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="underline-offset-4 hover:underline"
+            >
+              {contactInfo.email}
+            </a>
+          </p>
+          <p className="mt-2 text-sm text-cream/90">
+            <a
+              href={`tel:${contactInfo.phone.replace(/[^\d+]/g, "")}`}
+              className="underline-offset-4 hover:underline"
+            >
+              {contactInfo.phone}
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-sage">
+            Social media
           </h2>
           <ul className="mt-3 space-y-2">
             {socials.map((social) => (
@@ -51,12 +67,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <Link
-            to="/connect"
-            className="mt-4 inline-flex rounded-full bg-terracotta px-4 py-2 text-sm font-semibold text-white hover:bg-clay"
-          >
-            Write to us
-          </Link>
         </div>
       </div>
       <div className="border-t border-cream/10 py-4 text-center text-xs text-cream/60">

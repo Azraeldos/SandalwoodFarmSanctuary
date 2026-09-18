@@ -7,42 +7,6 @@ export const site = {
     "Placeholder details — replace this copy, hours, address, and social links when you are ready.",
 }
 
-export const story = {
-  heading: "Our story",
-  paragraphs: [
-    "Sandalwood began as a family farm and slowly became something quieter and more deliberate: a sanctuary for animals who needed a second chance, and a place for people to learn how food, land, and care belong together.",
-    "We still grow vegetables, tend orchards, and keep the barns in working order. What changed is the purpose. Animals live out their lives here. Visitors walk the lanes, help in the gardens, and leave with a clearer sense of what stewardship looks like on a human scale.",
-    "This page uses placeholder copy so you can open the site immediately. Swap in your founding story, names, and timeline whenever you like.",
-  ],
-}
-
-export const partners = [
-  {
-    name: "Ridge County Food Bank",
-    role: "Produce partner",
-    blurb:
-      "Surplus harvest from our kitchen gardens is packed for local families each week during peak season.",
-  },
-  {
-    name: "Willowbrook Wildlife Rehab",
-    role: "Care partner",
-    blurb:
-      "We share pasture space and veterinary referrals for farmed animals who cannot return to production settings.",
-  },
-  {
-    name: "Cedar 4-H Cooperative",
-    role: "Education partner",
-    blurb:
-      "Youth groups visit for seasonal workshops on animal care, compost, and seed saving.",
-  },
-  {
-    name: "Native Slope Conservancy",
-    role: "Land partner",
-    blurb:
-      "Hedgerows and pollinator strips along the creek are restored with locally collected native seed.",
-  },
-]
-
 export const animals = [
   {
     id: "maple",
@@ -100,7 +64,7 @@ export const animals = [
   },
 ]
 
-export const plants = [
+export const crops = [
   {
     id: "kitchen-garden",
     name: "Kitchen garden",
@@ -108,7 +72,7 @@ export const plants = [
     image:
       "https://images.unsplash.com/photo-1466692476866-aef1dfb1e648?auto=format&fit=crop&w=1200&q=80",
     blurb:
-      "Raised beds of herbs, greens, and tomatoes that supply our farm stand and education kitchen.",
+      "Raised beds of herbs, greens, and tomatoes that feed the animals, the farm stand, and weekend visitors.",
   },
   {
     id: "sunflower-row",
@@ -126,7 +90,7 @@ export const plants = [
     image:
       "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1200&q=80",
     blurb:
-      "Apples, pears, and a few stubborn plum trees. Visitors help pick on designated orchard days.",
+      "Apples, pears, and a few stubborn plum trees. Surplus fruit goes to the pigs and to neighbors.",
   },
   {
     id: "pumpkin-patch",
@@ -144,7 +108,7 @@ export const plants = [
     image:
       "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80",
     blurb:
-      "Native wildflowers and bunchgrasses that buffer the pasture from the road.",
+      "Native wildflowers and bunchgrasses that buffer the pasture from the road and keep the gardens buzzing.",
   },
   {
     id: "greenhouse",
@@ -157,81 +121,103 @@ export const plants = [
   },
 ]
 
-export const activities = [
+export const updates = [
   {
-    id: "walking-tours",
-    name: "Walking tours",
-    when: "Weekends, 11:00 AM",
+    id: "pig-shelter",
+    date: "September 2026",
+    title: "New shade shelter for the pigs",
+    image:
+      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80",
     blurb:
-      "A guided loop through barns, gardens, and pasture. Comfortable shoes recommended; strollers are welcome on the main lane.",
+      "Volunteers spent a Saturday raising a three-sided shelter in Pip’s paddock so the wallow stays cool through late summer.",
   },
   {
-    id: "garden-workshops",
-    name: "Garden workshops",
-    when: "Monthly, seasonal",
+    id: "tomato-harvest",
+    date: "August 2026",
+    title: "First tomato harvest of the season",
+    image:
+      "https://images.unsplash.com/photo-1466692476866-aef1dfb1e648?auto=format&fit=crop&w=1200&q=80",
     blurb:
-      "Hands-on sessions covering compost, seed starting, and preserving the harvest. Tools are provided.",
+      "The kitchen beds came in heavy. We packed extras for the food bank and sent the split fruit down to the pigs.",
+  },
+  {
+    id: "barn-weekend",
+    date: "July 2026",
+    title: "Barn painting weekend",
+    image:
+      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80",
+    blurb:
+      "Neighbors helped scrape and paint the south wall. Maple supervised from the fence and ate two brushes’ worth of apple peels.",
+  },
+]
+
+export const events = [
+  {
+    id: "harvest-potluck",
+    name: "Harvest potluck",
+    when: "Saturday, October 12 · 12:00–3:00 PM",
+    where: "Orchard lawn",
+    blurb:
+      "A casual afternoon on the hillside. Bring a dish if you can; tours of the barns start on the hour.",
   },
   {
     id: "volunteer-mornings",
     name: "Volunteer mornings",
-    when: "Saturdays, 9:00 AM",
+    when: "Saturdays · 9:00 AM",
+    where: "Meet at the barn gate",
     blurb:
-      "Mucking, weeding, fence checks, and animal enrichment. Sign up through the Connect form.",
+      "Mucking, weeding, fence checks, and animal enrichment. No experience needed — we will put you to work gently.",
   },
   {
     id: "school-visits",
     name: "School & group visits",
-    when: "By appointment",
+    when: "Weekdays, by appointment",
+    where: "Whole farm loop",
     blurb:
-      "Curriculum-friendly visits for classrooms and youth groups, with a focus on animal care and soil health.",
+      "Curriculum-friendly walks covering animal care and soil. Use the contact form to reserve a date.",
+  },
+  {
+    id: "barn-evening",
+    name: "Winter barn evening",
+    when: "Saturday, December 6 · 5:00 PM",
+    where: "Main barn",
+    blurb:
+      "Hot cider, string lights, and a quiet hour with the residents. Space is limited — reserve through Contact us.",
   },
 ]
 
-export const posts = [
-  {
-    slug: "welcome-to-sandalwood",
-    title: "Welcome to Sandalwood",
-    date: "2026-04-12",
-    excerpt:
-      "A short introduction to the farm, the sanctuary, and what to expect on your first visit.",
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80",
-    body: [
-      "This is a placeholder blog post. Replace it with your own updates about animals, seasons, and events.",
-      "On a typical weekend you might meet Maple at the gate, walk the sunflower row, and finish with a cup of tea on the porch.",
-      "We will use this space for rescue stories, harvest notes, and volunteer shout-outs as the real site grows.",
-    ],
-  },
-  {
-    slug: "spring-in-the-beds",
-    title: "Spring in the beds",
-    date: "2026-05-03",
-    excerpt:
-      "Peas are up, the hoop house is crowded, and the pollinator strip is starting to buzz.",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80",
-    body: [
-      "Placeholder seasonal note: spring is when the kitchen garden stops looking theoretical.",
-      "We start more seedlings than we need and share extras at the gate on Saturday mornings.",
-      "If you want to help transplant, watch the Activities page or send a volunteer note through Connect.",
-    ],
-  },
-  {
-    slug: "meet-maple",
-    title: "Meet Maple, unofficial mayor",
-    date: "2026-06-18",
-    excerpt:
-      "A goat profile, because every sanctuary needs a mayor and Maple already printed the business cards.",
-    image:
-      "https://images.unsplash.com/photo-1524024973431-2ad91674631b?auto=format&fit=crop&w=1400&q=80",
-    body: [
-      "Maple is a placeholder resident with a very real personality archetype: curious, photogenic, and slightly in charge.",
-      "Guests are welcome to photograph her from the fence line. Please keep snacks in your bag unless a volunteer says otherwise.",
-      "More animal stories will live here as you add them.",
-    ],
-  },
-]
+export const contactTopics = [
+  { value: "general", label: "General" },
+  { value: "donations", label: "Donations" },
+  { value: "host-event", label: "Host event" },
+  { value: "reserve-space", label: "Reserve space" },
+] as const
+
+export const donate = {
+  lede: "Gifts keep the barns stocked, the pastures mowed, and the animals in lifelong care. Details below are placeholders you can replace with real giving options.",
+  supports: [
+    {
+      title: "Daily animal care",
+      blurb: "Hay, grain, bedding, enrichment, and the quiet work of keeping everyone comfortable.",
+    },
+    {
+      title: "Veterinary & emergency",
+      blurb: "Checkups, farrier visits, medications, and a reserve for unexpected rescues.",
+    },
+    {
+      title: "Crops & land",
+      blurb: "Seed, soil amendments, irrigation, and fence repairs that keep the gardens productive.",
+    },
+  ],
+  inKind: [
+    "Orchard grass hay and quality grain",
+    "Untreated wood shavings and straw",
+    "Garden tools, gloves, and drip irrigation parts",
+    "Towels, buckets, and basic first-aid supplies",
+  ],
+  onlineNote:
+    "Online giving is not wired up yet. When you are ready, replace this note with a real donation link or form.",
+}
 
 export const visit = {
   hours: [
@@ -245,9 +231,6 @@ export const visit = {
   ],
   notes:
     "This address is a placeholder. Replace it with your real location, parking notes, and accessibility details.",
-  parking:
-    "Gravel lot beside the barn. Overflow parking along the lane when the lot is full.",
-  mapQuery: "Willamette Valley Oregon farm countryside",
 }
 
 export const socials = [
@@ -256,17 +239,14 @@ export const socials = [
   { name: "YouTube", href: "#" },
 ]
 
+export const contactInfo = {
+  email: "hello@sandalwoodfarmsanctuary.org",
+  phone: "(555) 014-1842",
+}
+
+export const newsletter = {
+  lede: "Seasonal notes from the barns, gardens, and residents. This signup is a placeholder and does not send email yet.",
+}
+
 export const heroImage =
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80"
-
-export function formatPostDate(isoDate: string) {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  }).format(new Date(`${isoDate}T12:00:00`))
-}
-
-export function getPost(slug: string) {
-  return posts.find((post) => post.slug === slug)
-}

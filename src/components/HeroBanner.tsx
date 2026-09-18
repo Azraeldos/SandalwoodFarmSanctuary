@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom"
-
 type HeroBannerProps = {
   image: string
   kicker?: string
   title: string
   subtitle: string
-  primaryTo?: string
+  primaryHref?: string
   primaryLabel?: string
-  secondaryTo?: string
+  secondaryHref?: string
   secondaryLabel?: string
 }
 
@@ -16,13 +14,13 @@ export function HeroBanner({
   kicker = "Farm & sanctuary",
   title,
   subtitle,
-  primaryTo = "/visit",
-  primaryLabel = "Plan a visit",
-  secondaryTo = "/connect",
-  secondaryLabel = "Get involved",
+  primaryHref = "#events",
+  primaryLabel = "Upcoming events",
+  secondaryHref = "#contact",
+  secondaryLabel = "Contact us",
 }: HeroBannerProps) {
   return (
-    <section className="relative isolate min-h-[72svh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[72svh] overflow-hidden">
       <img
         src={image}
         alt="Rolling farmland at dusk with a barn in the distance"
@@ -40,18 +38,18 @@ export function HeroBanner({
           {subtitle}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            to={primaryTo}
+          <a
+            href={primaryHref}
             className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-clay"
           >
             {primaryLabel}
-          </Link>
-          <Link
-            to={secondaryTo}
+          </a>
+          <a
+            href={secondaryHref}
             className="rounded-full border border-cream/70 bg-cream/10 px-5 py-2.5 text-sm font-semibold text-cream backdrop-blur-sm transition hover:bg-cream/20"
           >
             {secondaryLabel}
-          </Link>
+          </a>
         </div>
       </div>
     </section>

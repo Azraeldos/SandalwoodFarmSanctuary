@@ -1,14 +1,17 @@
 import { useEffect } from "react"
-import { Outlet, useLocation } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { Footer } from "./Footer"
 import { Header } from "./Header"
 
-function ScrollToTop() {
-  const { pathname } = useLocation()
-
+function ScrollToHash() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    const id = window.location.hash.slice(1)
+    if (!id) return
+    const timer = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView()
+    }, 0)
+    return () => window.clearTimeout(timer)
+  }, [])
 
   return null
 }
@@ -22,7 +25,7 @@ export function Layout() {
       >
         Skip to content
       </a>
-      <ScrollToTop />
+      <ScrollToHash />
       <Header />
       <main id="main" className="flex-1">
         <Outlet />
