@@ -5,7 +5,6 @@ type Topic = (typeof contactTopics)[number]["value"]
 
 type FormState = {
   topic: Topic
-  name: string
   email: string
   comments: string
 }
@@ -14,7 +13,6 @@ type FormErrors = Partial<Record<keyof FormState, string>>
 
 const initialState: FormState = {
   topic: "general",
-  name: "",
   email: "",
   comments: "",
 }
@@ -26,7 +24,6 @@ function isEmail(value: string) {
 function validate(state: FormState): FormErrors {
   const errors: FormErrors = {}
 
-  if (!state.name.trim()) errors.name = "Please enter your name."
   if (!state.email.trim()) errors.email = "Please enter your email."
   else if (!isEmail(state.email)) errors.email = "Please enter a valid email."
   if (!state.comments.trim()) errors.comments = "Please add a comment."
@@ -80,25 +77,15 @@ export function ContactForm() {
         </select>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field
-          id={`${formId}-name`}
-          label="Name"
-          value={state.name}
-          error={errors.name}
-          onChange={(value) => update("name", value)}
-          autoComplete="name"
-        />
-        <Field
-          id={`${formId}-email`}
-          label="Email"
-          type="email"
-          value={state.email}
-          error={errors.email}
-          onChange={(value) => update("email", value)}
-          autoComplete="email"
-        />
-      </div>
+      <Field
+        id={`${formId}-email`}
+        label="Email"
+        type="email"
+        value={state.email}
+        error={errors.email}
+        onChange={(value) => update("email", value)}
+        autoComplete="email"
+      />
       <Field
         id={`${formId}-comments`}
         label="Comments"

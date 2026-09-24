@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
-  --color-cream: #f6f1e6;
-  --color-parchment: #efe6d4;
-  --color-sage: #6f8f74;
-  --color-forest: #2c4636;
-  --color-moss: #4a6b52;
-  --color-terracotta: #c45c38;
-  --color-clay: #a34b2e;
-  --color-soil: #4a3b2f;
-  --color-ink: #2a241f;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  /* Warm sand surfaces */
+  --color-cream: #f3eee4;
+  --color-parchment: #e6ddd0;
+  /* Living olive & leaf greens */
+  --color-sage: #7f9674;
+  --color-moss: #5d7a52;
+  --color-leaf: #4f6b45;
+  /* Deep umber for headings & dark bands */
+  --color-forest: #3a2f24;
+  /* Burnt sienna CTAs */
+  --color-terracotta: #b45a32;
+  --color-clay: #8f4324;
+  --color-soil: #5c4334;
+  --color-ink: #2a1f18;
+  --color-gold: #b8955c;
 }
 
 html {
@@ -23,7 +29,12 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background: var(--color-cream);
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 0% 20%, rgb(127 150 116 / 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 100% 60%, rgb(93 122 82 / 0.1), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgb(184 149 92 / 0.08), transparent 55%);
+  background-attachment: fixed;
 }
 
 #root {
@@ -31,6 +42,94 @@ body {
 }
 
 ::selection {
-  background: var(--color-sage);
+  background: var(--color-moss);
   color: white;
+}
+
+@keyframes leaf-drift {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.leaf-drift {
+  animation: leaf-drift 4.5s ease-in-out infinite alternate;
+}
+
+.leaf-drift-delayed {
+  animation: leaf-drift 5.2s ease-in-out 0.6s infinite alternate;
+}
+
+.green-glow {
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.green-glow:hover,
+.green-glow:focus-visible {
+  color: var(--color-moss);
+  text-shadow:
+    0 0 8px rgb(93 122 82 / 0.55),
+    0 0 18px rgb(127 150 116 / 0.45);
+}
+
+.green-glow-light:hover,
+.green-glow-light:focus-visible {
+  color: #f0f5eb;
+  text-shadow:
+    0 0 10px rgb(180 220 160 / 0.75),
+    0 0 22px rgb(127 150 116 / 0.55);
+}
+
+.green-glow-box:hover,
+.green-glow-box:focus-visible {
+  color: var(--color-moss);
+  filter: drop-shadow(0 0 6px rgb(93 122 82 / 0.65))
+    drop-shadow(0 0 14px rgb(127 150 116 / 0.4));
+}
+
+/* Keep icon fill visible on dark green footer */
+.green-glow-social {
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.green-glow-social:hover,
+.green-glow-social:focus-visible {
+  color: #f3eee4;
+  border-color: rgb(200 230 180 / 0.85);
+  background-color: rgb(255 255 255 / 0.12);
+  box-shadow:
+    0 0 0 1px rgb(180 220 160 / 0.35),
+    0 0 12px rgb(180 220 160 / 0.55),
+    0 0 24px rgb(127 150 116 / 0.45);
+}
+
+.green-glow-arrow {
+  transition:
+    color 0.2s ease,
+    filter 0.2s ease,
+    text-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.green-glow-arrow:hover,
+.green-glow-arrow:focus-visible {
+  color: var(--color-leaf);
+  text-shadow:
+    0 0 10px rgb(93 122 82 / 0.7),
+    0 0 22px rgb(127 150 116 / 0.55);
+  filter: drop-shadow(0 0 4px rgb(93 122 82 / 0.9))
+    drop-shadow(0 0 12px rgb(127 150 116 / 0.7))
+    drop-shadow(0 0 22px rgb(160 200 140 / 0.5));
+  transform: scale(1.06);
 }

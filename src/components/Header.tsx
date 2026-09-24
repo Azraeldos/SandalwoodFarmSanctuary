@@ -3,11 +3,11 @@ import { site } from "../data/content"
 import { Logo } from "./Logo"
 
 const links = [
-  { href: "#animals", label: "Animals" },
-  { href: "#crops", label: "Crops" },
-  { href: "#updates", label: "Updates" },
+  { href: "#animals", label: "Meet our residents" },
+  { href: "#crops", label: "Produce" },
+  { href: "#updates", label: "Farm Happenings" },
   { href: "#events", label: "Events" },
-  { href: "#donate", label: "Donate" },
+  { href: "#donate", label: "Ways to support" },
 ]
 
 const navClass =

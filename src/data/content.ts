@@ -1,153 +1,123 @@
+/** Public folder asset, respecting Vite `base` for GitHub Pages. */
+export function asset(file: string) {
+  const base = import.meta.env.BASE_URL
+  return `${base}${file.replace(/^\//, "")}`
+}
+
 export const site = {
-  name: "Sandalwood Farm Sanctuary",
+  name: "Sandalwood Farm & Sanctuary",
   tagline: "A working farm and a forever home.",
+  quote: "Where rescued animals rest, gardens grow, and neighbors belong.",
   description:
-    "Sandalwood Farm Sanctuary is a small working farm and refuge where rescued animals, kitchen gardens, and community gatherings share the same hillside.",
+    "Sandalwood Farm & Sanctuary is a small working farm and refuge where rescued animals, kitchen gardens, and community gatherings share the same hillside.",
   placeholderNote:
     "Placeholder details — replace this copy, hours, address, and social links when you are ready.",
 }
 
+export const whatWeDo = {
+  mission:
+    "Sandalwood Farm & Sanctuary cares for rescued farm animals, tends the hillside we share, and invites neighbors to learn through visits, volunteer days, and advocacy for kinder farming.",
+  pillars: [
+    { title: "Rescue", icon: "heart" as const },
+    { title: "Educate", icon: "book" as const },
+    { title: "Advocate", icon: "megaphone" as const },
+  ],
+}
+
 export const animals = [
   {
-    id: "maple",
-    name: "Maple",
-    species: "Goat",
-    image:
-      "https://images.unsplash.com/photo-1524024973431-2ad91674631b?auto=format&fit=crop&w=1200&q=80",
+    id: "shelly",
+    name: "Shelly",
+    species: "Tortoise",
+    image: asset("TortiseGarden.jpg"),
     story:
-      "Maple arrived as a bottle kid and now leads barn tours with unearned confidence. She prefers apple peels and sunny fences.",
+      "Shelly patrols the mulch paths and garden beds at her own pace. Guests often find her near the fennel and poppies on warm afternoons.",
   },
   {
-    id: "buttercup",
-    name: "Buttercup",
-    species: "Cow",
-    image:
-      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80",
+    id: "deck-tortoise",
+    name: "Sunny",
+    species: "Tortoise",
+    image: asset("TortiseBelowDeck.jpg"),
     story:
-      "Buttercup is the calm center of the pasture. Guests often sit nearby while she grazes the lower meadow.",
+      "Sunny prefers the cool shade under the deck. On hot days you will find her resting in the mulch while the garden hums outside.",
   },
   {
-    id: "pip",
-    name: "Pip",
-    species: "Pig",
-    image:
-      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80",
+    id: "alpaca",
+    name: "Clover",
+    species: "Alpaca",
+    image: asset("Alpca1.jpg"),
     story:
-      "Pip is a master of mud wallows and gentle greetings. He helped us redesign the shade shelter last summer — accidentally.",
-  },
-  {
-    id: "luna",
-    name: "Luna",
-    species: "Horse",
-    image:
-      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "Luna came from a riding program that closed. She now enjoys trail walks on sanctuary grounds and quiet grooming sessions.",
-  },
-  {
-    id: "clover-flock",
-    name: "The Clover Flock",
-    species: "Chickens",
-    image:
-      "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "A mixed flock of layers and retired birds who patrol the orchard. Eggs, when they arrive, stay on the farm.",
-  },
-  {
-    id: "willow",
-    name: "Willow",
-    species: "Donkey",
-    image:
-      "https://images.unsplash.com/photo-1598974357809-57d12c6c56d0?auto=format&fit=crop&w=1200&q=80",
-    story:
-      "Willow is our unofficial greeter. She watches the gate, brays at delivery trucks, and naps beside the herb beds.",
+      "Clover is curious, soft-spoken, and first to the fence when visitors arrive with a friendly hello.",
   },
 ]
 
 export const crops = [
   {
-    id: "kitchen-garden",
-    name: "Kitchen garden",
+    id: "raised-beds",
+    name: "Raised beds",
     season: "Spring–fall",
-    image:
-      "https://images.unsplash.com/photo-1466692476866-aef1dfb1e648?auto=format&fit=crop&w=1200&q=80",
+    image: asset("Crops.jpg"),
     blurb:
-      "Raised beds of herbs, greens, and tomatoes that feed the animals, the farm stand, and weekend visitors.",
+      "Wooden beds overflowing with greens, herbs, and flowers that feed the kitchen and the compost pile.",
   },
   {
-    id: "sunflower-row",
-    name: "Sunflower row",
+    id: "garden-rows",
+    name: "Garden rows",
+    season: "Growing season",
+    image: asset("Crops2.jpg"),
+    blurb:
+      "Rows of produce tended by volunteers — the heart of what we grow for share tables and residents.",
+  },
+  {
+    id: "harvest-bounty",
+    name: "Harvest bounty",
     season: "Late summer",
-    image:
-      "https://images.unsplash.com/photo-1470509035509-1ded54823216?auto=format&fit=crop&w=1200&q=80",
+    image: asset("Crops3.jpg"),
     blurb:
-      "A long strip of sunflowers that feeds goldfinches and marks the path down to the creek.",
+      "Peak-season color from the beds: greens, blooms, and whatever the hillside decided to ripen that week.",
   },
   {
-    id: "orchard",
-    name: "Heirloom orchard",
-    season: "Harvest in autumn",
-    image:
-      "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1200&q=80",
+    id: "produce",
+    name: "Fresh produce",
+    season: "Harvest days",
+    image: asset("Produce.jpg"),
     blurb:
-      "Apples, pears, and a few stubborn plum trees. Surplus fruit goes to the pigs and to neighbors.",
+      "Baskets of produce headed for neighbors, farm meals, and enrichment treats for the animals.",
   },
   {
-    id: "pumpkin-patch",
-    name: "Pumpkin patch",
-    season: "September–October",
-    image:
-      "https://images.unsplash.com/photo-1506917728037-b6af01a7ff5a?auto=format&fit=crop&w=1200&q=80",
+    id: "late-beds",
+    name: "Late-season beds",
+    season: "Fall",
+    image: asset("Crops4.jpg"),
     blurb:
-      "A small patch for families and school groups, with leftover fruit going to the pigs.",
-  },
-  {
-    id: "pollinator-strip",
-    name: "Pollinator strip",
-    season: "Year-round habitat",
-    image:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80",
-    blurb:
-      "Native wildflowers and bunchgrasses that buffer the pasture from the road and keep the gardens buzzing.",
-  },
-  {
-    id: "greenhouse",
-    name: "Hoop house starts",
-    season: "Late winter",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80",
-    blurb:
-      "Seedlings for the gardens and for spring plant swaps with neighbors.",
+      "Cooler-weather plantings and lingering summer crops sharing the same beds into autumn.",
   },
 ]
 
 export const updates = [
   {
-    id: "pig-shelter",
-    date: "September 2026",
-    title: "New shade shelter for the pigs",
-    image:
-      "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80",
+    id: "circle-friends",
+    date: "Recent",
+    title: "Circle of friends",
+    image: asset("CircleGroupMeeting.jpg"),
     blurb:
-      "Volunteers spent a Saturday raising a three-sided shelter in Pip’s paddock so the wallow stays cool through late summer.",
+      "Weekly circles on the lawn keep the sanctuary connected — stories, plans, and plenty of muddy boots.",
   },
   {
-    id: "tomato-harvest",
-    date: "August 2026",
-    title: "First tomato harvest of the season",
-    image:
-      "https://images.unsplash.com/photo-1466692476866-aef1dfb1e648?auto=format&fit=crop&w=1200&q=80",
+    id: "evening-gatherings",
+    date: "Recent",
+    title: "Evening gatherings",
+    image: asset("YogaByPool.jpg"),
     blurb:
-      "The kitchen beds came in heavy. We packed extras for the food bank and sent the split fruit down to the pigs.",
+      "Neighbors stretch and breathe beside the pool while string lights warm the dusk — a quiet hour shared with the hillside.",
   },
   {
-    id: "barn-weekend",
-    date: "July 2026",
-    title: "Barn painting weekend",
-    image:
-      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80",
+    id: "composting",
+    date: "Recent",
+    title: "Group composting day",
+    image: asset("GroupComposting.jpg"),
     blurb:
-      "Neighbors helped scrape and paint the south wall. Maple supervised from the fence and ate two brushes’ worth of apple peels.",
+      "Neighbors turned piles together and talked through the next season’s soil plan.",
   },
 ]
 
@@ -159,6 +129,14 @@ export const events = [
     where: "Orchard lawn",
     blurb:
       "A casual afternoon on the hillside. Bring a dish if you can; tours of the barns start on the hour.",
+  },
+  {
+    id: "yoga-dusk",
+    name: "Dusk yoga by the pool",
+    when: "Select evenings · sunset",
+    where: "Pool lawn",
+    blurb:
+      "Gentle movement under the string lights. Bring a mat; all levels welcome.",
   },
   {
     id: "volunteer-mornings",
@@ -176,14 +154,6 @@ export const events = [
     blurb:
       "Curriculum-friendly walks covering animal care and soil. Use the contact form to reserve a date.",
   },
-  {
-    id: "barn-evening",
-    name: "Winter barn evening",
-    when: "Saturday, December 6 · 5:00 PM",
-    where: "Main barn",
-    blurb:
-      "Hot cider, string lights, and a quiet hour with the residents. Space is limited — reserve through Contact us.",
-  },
 ]
 
 export const contactTopics = [
@@ -194,29 +164,60 @@ export const contactTopics = [
 ] as const
 
 export const donate = {
-  lede: "Gifts keep the barns stocked, the pastures mowed, and the animals in lifelong care. Details below are placeholders you can replace with real giving options.",
-  supports: [
+  lede: "Every gift helps feed residents, tend the gardens, and keep the hillside open to neighbors. Links below are placeholders — swap in your real URLs when ready.",
+  images: [
     {
-      title: "Daily animal care",
-      blurb: "Hay, grain, bedding, enrichment, and the quiet work of keeping everyone comfortable.",
+      src: asset("DonationBasket.jpg"),
+      alt: "Donation basket with garden supplies on the grass",
     },
     {
-      title: "Veterinary & emergency",
-      blurb: "Checkups, farrier visits, medications, and a reserve for unexpected rescues.",
+      src: asset("Seeds.jpg"),
+      alt: "Seed packets and garden starts ready for planting",
     },
     {
-      title: "Crops & land",
-      blurb: "Seed, soil amendments, irrigation, and fence repairs that keep the gardens productive.",
+      src: asset("Chicken2.jpg"),
+      alt: "A chicken on the sanctuary grounds",
     },
   ],
-  inKind: [
-    "Orchard grass hay and quality grain",
-    "Untreated wood shavings and straw",
-    "Garden tools, gloves, and drip irrigation parts",
-    "Towels, buckets, and basic first-aid supplies",
+  ways: [
+    {
+      id: "amazon-wishlist",
+      title: "Amazon wishlist",
+      blurb: "Shop our placeholder wishlist for everyday supplies the sanctuary needs most.",
+      href: "#",
+      cta: "View wishlist",
+    },
+    {
+      id: "in-kind",
+      title: "Equipment, tools & feed",
+      blurb:
+        "Donate equipment, tools, feed, bedding, and other in-kind goods. Contact us to arrange a drop-off.",
+      href: "#contact",
+      cta: "Offer a donation",
+    },
+    {
+      id: "volunteer",
+      title: "Volunteer",
+      blurb: "Give your time on volunteer mornings — weeding, mucking, enrichment, and more.",
+      href: "#events",
+      cta: "See volunteer days",
+    },
+    {
+      id: "quick-donate",
+      title: "Quick money donation",
+      blurb: "Make a one-time or recurring gift. This button is a placeholder for your payment link.",
+      href: "#",
+      cta: "Donate now",
+    },
+    {
+      id: "rewards",
+      title: "Rewards",
+      blurb:
+        "Placeholder for donor rewards, membership perks, or thank-you gifts. Details coming soon.",
+      href: "#",
+      cta: "Learn about rewards",
+    },
   ],
-  onlineNote:
-    "Online giving is not wired up yet. When you are ready, replace this note with a real donation link or form.",
 }
 
 export const visit = {
@@ -236,6 +237,7 @@ export const visit = {
 export const socials = [
   { name: "Facebook", href: "#" },
   { name: "Instagram", href: "#" },
+  { name: "X", href: "#" },
   { name: "YouTube", href: "#" },
 ]
 
@@ -245,8 +247,8 @@ export const contactInfo = {
 }
 
 export const newsletter = {
-  lede: "Seasonal notes from the barns, gardens, and residents. This signup is a placeholder and does not send email yet.",
+  lede: "Get seasonal notes from the barns, gardens, and residents — drop your email below.",
 }
 
-export const heroImage =
-  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80"
+export const heroImage = asset("ScenicPictures1.jpg")
+export const scenicImage = asset("SenicPictures2.jpg")
