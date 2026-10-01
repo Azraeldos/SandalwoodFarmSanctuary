@@ -122,7 +122,6 @@ export function SquiggleEdge({
         maskPosition: "left center",
         WebkitMaskSize: "4.5rem 100%",
         maskSize: "4.5rem 100%",
-        WebkitMaskMode: "alpha",
         maskMode: "alpha",
         transform: edge === "bottom" ? "scaleY(-1)" : undefined,
       }}
