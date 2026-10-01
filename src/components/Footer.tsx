@@ -1,4 +1,5 @@
-import { site, socials } from "../data/content"
+import { contact, socials } from "../data/content"
+import { SquiggleEdge } from "./TextileDivider"
 
 const footerLinkColumns = [
   [
@@ -8,11 +9,9 @@ const footerLinkColumns = [
     { href: "#animals", label: "Meet our residents" },
   ],
   [
-    { href: "#events", label: "Get Involved" },
     { href: "#donate", label: "Ways to support" },
     { href: "#donate-quick", label: "Donate" },
-    { href: "#newsletter", label: "Newsletter" },
-    { href: "#contact", label: "Contact Us" },
+    { href: "#contact", label: "Get in touch" },
   ],
 ] as const
 
@@ -37,16 +36,10 @@ function SocialIcon({ name }: { name: string }) {
           <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5ZM17 7.75a.75.75 0 1 1-.75.75A.75.75 0 0 1 17 7.75Z" />
         </svg>
       )
-    case "X":
+    case "Linktree":
       return (
         <svg {...common}>
-          <path d="M4 4h4.2l4.1 5.7L17.5 4H20l-6.1 7.2L20.5 20H16.3l-4.5-6.2L7 20H4.5l6.4-7.6L4 4Z" />
-        </svg>
-      )
-    case "YouTube":
-      return (
-        <svg {...common}>
-          <path d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3A2.7 2.7 0 0 0 2.4 7.2 28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9C6 19 12 19 12 19s6 0 7.7-.3a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
+          <path d="M13.5 2.1 12 4.7 10.5 2.1 9 3.6 10.9 6.8H7v2h3.5L7.8 13l1.4 1.1L12 10.2l2.8 3.9 1.4-1.1-2.7-4.2H17v-2h-3.9L15 3.6 13.5 2.1ZM11 15h2v7h-2v-7Z" />
         </svg>
       )
     default:
@@ -56,8 +49,13 @@ function SocialIcon({ name }: { name: string }) {
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-leaf/30 bg-leaf text-cream">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-14 sm:px-6 lg:flex-row lg:justify-between lg:gap-16">
+    <footer className="relative -mt-[1.75rem] overflow-hidden pt-[1.75rem] text-cream">
+      <div
+        className="pointer-events-none absolute inset-0 bg-copper squiggle-mask-top"
+        aria-hidden="true"
+      />
+      <SquiggleEdge edge="top" color="saffron" />
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-12 px-4 py-14 sm:px-6 lg:flex-row lg:justify-between lg:gap-16">
         <nav
           className="grid grid-cols-2 gap-x-10 gap-y-3 sm:gap-x-16"
           aria-label="Footer"
@@ -68,7 +66,7 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="green-glow-light text-sm font-bold text-cream"
+                    className="type-glow green-glow-light font-display text-base font-bold tracking-[-0.02em] text-cream"
                   >
                     {link.label}
                   </a>
@@ -79,21 +77,32 @@ export function Footer() {
         </nav>
 
         <div className="max-w-md lg:max-w-sm">
-          <p className="text-sm leading-relaxed text-cream/85">
-            Get the latest news about {site.name}&apos;s programs, stories about our
-            rescues, and how you can make a difference.{" "}
+          <p className="type-glow font-display text-base leading-relaxed tracking-[-0.01em] text-cream/90">
+            {contact.emailNote}{" "}
             <a
-              href="#newsletter"
-              className="green-glow-light font-bold text-cream underline underline-offset-4"
+              href={`mailto:${contact.emailPlaceholder}`}
+              className="green-glow-light font-display font-bold text-cream underline underline-offset-4"
             >
-              Subscribe
+              {contact.emailPlaceholder}
             </a>
-            .
+            . Book a visit, volunteer, or follow along on socials.
           </p>
+
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+            {contact.groups.map((group) => (
+              <a
+                key={group.title}
+                href="#contact"
+                className="type-glow green-glow-light font-display text-sm font-bold tracking-[-0.01em] text-cream underline underline-offset-4"
+              >
+                {group.title}
+              </a>
+            ))}
+          </div>
 
           <a
             href="#donate-quick"
-            className="green-glow-light mt-5 inline-flex rounded-full border border-cream/40 bg-cream/10 px-4 py-2 text-sm font-semibold text-cream"
+            className="type-glow green-glow-light mt-5 inline-flex rounded-full border border-cream/50 bg-cream/10 px-4 py-2 font-display text-sm font-bold tracking-[-0.01em] text-cream"
           >
             Donate
           </a>
@@ -103,6 +112,8 @@ export function Footer() {
               <li key={social.name}>
                 <a
                   href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="green-glow-social inline-flex h-9 w-9 items-center justify-center rounded-full border border-cream/50 text-cream"
                   aria-label={social.name}
                 >
@@ -111,18 +122,6 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-cream/15">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs leading-relaxed text-cream/65 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            {site.name} is a 501(c)(3) nonprofit organization. EIN number
-            XX-XXXXXXX (placeholder).
-          </p>
-          <p className="sm:text-right">
-            Placeholder site for GitHub Pages. Content is ready to replace.
-          </p>
         </div>
       </div>
     </footer>

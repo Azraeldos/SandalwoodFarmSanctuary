@@ -11,14 +11,14 @@ export function PageHeader({ kicker, title, lede }: PageHeaderProps) {
     <header className="border-b border-forest/10 bg-parchment/60">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         {kicker ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-moss">
+          <p className="font-display text-sm font-bold tracking-[-0.01em] text-moss">
             {kicker}
           </p>
         ) : null}
-        <h1 className="mt-2 font-display text-4xl font-medium text-forest sm:text-5xl">
+        <h1 className="mt-2 font-display text-4xl font-bold tracking-[-0.02em] text-forest sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-soil sm:text-lg">
+        <p className="mt-4 max-w-2xl font-display text-lg leading-relaxed tracking-[-0.01em] text-soil sm:text-xl">
           {lede}
         </p>
       </div>

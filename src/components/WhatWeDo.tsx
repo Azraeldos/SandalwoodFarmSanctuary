@@ -1,7 +1,9 @@
 import { BotanicalAccent, LeafDivider } from "./BotanicalAccent"
+import { SquiggleEdge } from "./TextileDivider"
 
 type Pillar = {
   title: string
+  blurb: string
   icon: "heart" | "book" | "megaphone"
 }
 
@@ -79,33 +81,49 @@ function PillarIcon({ name }: { name: Pillar["icon"] }) {
 
 export function WhatWeDo({ mission, pillars }: WhatWeDoProps) {
   return (
-    <section id="what-we-do" className="relative scroll-mt-24 overflow-hidden bg-white/80">
+    <section
+      id="what-we-do"
+      className="relative -mt-[1.75rem] scroll-mt-24 overflow-hidden pt-[1.75rem]"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-lagoon squiggle-mask-top"
+        aria-hidden="true"
+      />
+      <SquiggleEdge edge="top" color="mustard" />
       <BotanicalAccent
         variant="fern"
-        className="pointer-events-none absolute top-8 left-4 h-20 w-20 text-moss/25 leaf-drift sm:left-10 sm:h-28 sm:w-28"
+        className="pointer-events-none absolute top-8 left-4 h-20 w-20 text-saffron/30 leaf-drift sm:left-10 sm:h-28 sm:w-28"
       />
       <BotanicalAccent
         variant="cluster"
-        className="pointer-events-none absolute right-4 bottom-6 h-24 w-24 text-sage/30 leaf-drift-delayed sm:right-12 sm:h-32 sm:w-32"
+        className="pointer-events-none absolute right-4 bottom-6 h-24 w-24 text-cream/25 leaf-drift-delayed sm:right-12 sm:h-32 sm:w-32"
       />
 
-      <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
-        <LeafDivider className="mb-8 justify-center" />
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-soil/55">
-          What we do
-        </p>
-        <p className="mx-auto mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink sm:text-3xl sm:leading-snug">
-          {mission}
-        </p>
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="text-center">
+          <LeafDivider className="mb-8 justify-center text-saffron/80" />
+          <p className="font-display text-lg font-bold tracking-[-0.01em] text-saffron sm:text-xl">
+            What we do
+          </p>
+          <p className="type-glow mx-auto mt-6 max-w-4xl font-display text-[1.85rem] font-bold leading-snug tracking-[-0.02em] text-cream sm:text-[2.15rem] sm:leading-snug">
+            {mission}
+          </p>
+        </div>
 
-        <ul className="mt-14 grid gap-10 sm:mt-16 sm:grid-cols-3 sm:gap-8">
+        <ul className="mt-14 grid gap-6 sm:mt-16 sm:grid-cols-3">
           {pillars.map((pillar) => (
-            <li key={pillar.title} className="group flex cursor-default flex-col items-center">
-              <div className="green-glow-box rounded-full p-2 text-gold">
+            <li
+              key={pillar.title}
+              className="flex flex-col rounded-2xl bg-white/95 p-6 text-left shadow-sm ring-1 ring-cream/20 sm:p-8"
+            >
+              <div className="text-ochre">
                 <PillarIcon name={pillar.icon} />
               </div>
-              <p className="green-glow mt-4 border-b border-ink pb-1 text-base font-bold text-ink group-hover:border-moss">
+              <h3 className="mt-4 font-display text-3xl font-bold tracking-[-0.02em] text-forest sm:text-4xl">
                 {pillar.title}
+              </h3>
+              <p className="mt-3 font-display text-lg leading-relaxed tracking-[-0.01em] text-soil sm:text-xl">
+                {pillar.blurb}
               </p>
             </li>
           ))}

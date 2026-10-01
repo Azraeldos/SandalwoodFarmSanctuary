@@ -7,47 +7,73 @@ export function asset(file: string) {
 export const site = {
   name: "Sandalwood Farm & Sanctuary",
   tagline: "A working farm and a forever home.",
-  quote: "Where rescued animals rest, gardens grow, and neighbors belong.",
+  quote: "Rooted in Reciprocity",
   description:
-    "Sandalwood Farm & Sanctuary is a small working farm and refuge where rescued animals, kitchen gardens, and community gatherings share the same hillside.",
+    "Sandalwood Farm & Sanctuary is a small working farm and refuge where rescued animals, kitchen gardens, and community gatherings share the same home.",
   placeholderNote:
     "Placeholder details — replace this copy, hours, address, and social links when you are ready.",
 }
 
 export const whatWeDo = {
   mission:
-    "Sandalwood Farm & Sanctuary cares for rescued farm animals, tends the hillside we share, and invites neighbors to learn through visits, volunteer days, and advocacy for kinder farming.",
+    "Sandalwood Farm & Sanctuary cares for rescued animals, tends the land we share, and invites neighbors to learn through visits, volunteer days, and advocacy for kinder farming.",
   pillars: [
-    { title: "Rescue", icon: "heart" as const },
-    { title: "Educate", icon: "book" as const },
-    { title: "Advocate", icon: "megaphone" as const },
+    {
+      title: "Rescue",
+      icon: "heart" as const,
+      blurb:
+        "Rescued farm animals live out their days here — room to wander, a steady routine, and people who know them by name.",
+    },
+    {
+      title: "Educate",
+      icon: "book" as const,
+      blurb:
+        "Visits, volunteer mornings, and time in the gardens so neighbors can see how a small farm cares for its residents and its soil.",
+    },
+    {
+      title: "Advocate",
+      icon: "megaphone" as const,
+      blurb:
+        "We speak up for kinder farming and keep the farm open — a place neighbors can gather, learn, and belong.",
+    },
   ],
 }
 
 export const animals = [
   {
-    id: "shelly",
-    name: "Shelly",
-    species: "Tortoise",
-    image: asset("TortiseGarden.jpg"),
-    story:
-      "Shelly patrols the mulch paths and garden beds at her own pace. Guests often find her near the fennel and poppies on warm afternoons.",
-  },
-  {
-    id: "deck-tortoise",
-    name: "Sunny",
-    species: "Tortoise",
-    image: asset("TortiseBelowDeck.jpg"),
-    story:
-      "Sunny prefers the cool shade under the deck. On hot days you will find her resting in the mulch while the garden hums outside.",
-  },
-  {
-    id: "alpaca",
-    name: "Clover",
+    id: "alpaca-1",
+    name: "Alpaca 1",
     species: "Alpaca",
     image: asset("Alpca1.jpg"),
-    story:
-      "Clover is curious, soft-spoken, and first to the fence when visitors arrive with a friendly hello.",
+    story: "Placeholder — swap in this alpaca’s name and story when ready.",
+  },
+  {
+    id: "alpaca-2",
+    name: "Alpaca 2",
+    species: "Alpaca",
+    image: asset("Alpca1.jpg"),
+    story: "Placeholder — swap in this alpaca’s name and story when ready.",
+  },
+  {
+    id: "alpaca-3",
+    name: "Alpaca 3",
+    species: "Alpaca",
+    image: asset("Alpca1.jpg"),
+    story: "Placeholder — swap in this alpaca’s name and story when ready.",
+  },
+  {
+    id: "tortoise",
+    name: "Tortoise",
+    species: "Tortoise",
+    image: asset("TortiseGarden.jpg"),
+    story: "Placeholder — swap in this tortoise’s name and story when ready.",
+  },
+  {
+    id: "goat",
+    name: "Goat",
+    species: "Goat",
+    image: asset("EarlyPicture.jpg"),
+    story: "Placeholder — swap in this goat’s photo, name, and story when ready.",
   },
 ]
 
@@ -72,52 +98,36 @@ export const crops = [
     id: "harvest-bounty",
     name: "Harvest bounty",
     season: "Late summer",
-    image: asset("Crops3.jpg"),
+    image: asset("greenCabage.png"),
     blurb:
-      "Peak-season color from the beds: greens, blooms, and whatever the hillside decided to ripen that week.",
-  },
-  {
-    id: "produce",
-    name: "Fresh produce",
-    season: "Harvest days",
-    image: asset("Produce.jpg"),
-    blurb:
-      "Baskets of produce headed for neighbors, farm meals, and enrichment treats for the animals.",
-  },
-  {
-    id: "late-beds",
-    name: "Late-season beds",
-    season: "Fall",
-    image: asset("Crops4.jpg"),
-    blurb:
-      "Cooler-weather plantings and lingering summer crops sharing the same beds into autumn.",
+      "Peak-season color from the beds: greens, blooms, and whatever the garden decided to ripen that week.",
   },
 ]
 
 export const updates = [
   {
-    id: "circle-friends",
+    id: "harvest-carry",
     date: "Recent",
-    title: "Circle of friends",
-    image: asset("CircleGroupMeeting.jpg"),
+    title: "Harvest day haul",
+    image: asset("CarryingBounty.png"),
     blurb:
-      "Weekly circles on the lawn keep the sanctuary connected — stories, plans, and plenty of muddy boots.",
+      "Arms full of greens from the rows — neighbors carrying crates together after a morning in the beds.",
   },
   {
-    id: "evening-gatherings",
+    id: "meet-the-animals",
     date: "Recent",
-    title: "Evening gatherings",
-    image: asset("YogaByPool.jpg"),
+    title: "Meet the animals morning",
+    image: asset("TeachingGroupKids.png"),
     blurb:
-      "Neighbors stretch and breathe beside the pool while string lights warm the dusk — a quiet hour shared with the hillside.",
+      "Kids and families gather on the mulch to meet our residents up close — soft voices, curious hands, and a calm black rabbit at the center.",
   },
   {
-    id: "composting",
+    id: "compost-day",
     date: "Recent",
-    title: "Group composting day",
-    image: asset("GroupComposting.jpg"),
+    title: "Compost work day",
+    image: asset("CompostDay.png"),
     blurb:
-      "Neighbors turned piles together and talked through the next season’s soil plan.",
+      "Bins rinsed, piles turned, and wood chips moved — the unglamorous work that keeps next season’s soil rich.",
   },
 ]
 
@@ -128,7 +138,7 @@ export const events = [
     when: "Saturday, October 12 · 12:00–3:00 PM",
     where: "Orchard lawn",
     blurb:
-      "A casual afternoon on the hillside. Bring a dish if you can; tours of the barns start on the hour.",
+      "A casual afternoon at the farm. Bring a dish if you can; tours of the barns start on the hour.",
   },
   {
     id: "yoga-dusk",
@@ -152,31 +162,98 @@ export const events = [
     when: "Weekdays, by appointment",
     where: "Whole farm loop",
     blurb:
-      "Curriculum-friendly walks covering animal care and soil. Use the contact form to reserve a date.",
+      "Curriculum-friendly walks covering animal care and soil. Reach out via Get in touch to reserve a date.",
   },
 ]
 
-export const contactTopics = [
-  { value: "general", label: "General" },
-  { value: "donations", label: "Donations" },
-  { value: "host-event", label: "Host event" },
-  { value: "reserve-space", label: "Reserve space" },
-] as const
+export const contact = {
+  title: "Get in touch",
+  kicker: "Say hello",
+  emailNote: "For general inquiries and item donations please email",
+  emailPlaceholder: "sandalwoodfarmandsanctuary@gmail.com",
+  groups: [
+    {
+      title: "Book with us",
+      links: [
+        {
+          label: "Peerspace",
+          href: "https://www.peerspace.com/ca/pages/listings/69dfdae640b6b658e1f0a60d",
+        },
+        {
+          label: "Healing Gardens",
+          href: "https://www.healinggardens.co/gardens/sandalwood-farm-and-sanctuary",
+        },
+        {
+          label: "Hipcamp",
+          href: "https://www.hipcamp.com/en-US/land/california-sandalwood-farm-and-sanctuary-xryh5768?adults=1&children=0",
+        },
+      ],
+    },
+    {
+      title: "Volunteer",
+      links: [
+        {
+          label: "VolunteerSignup",
+          href: "https://volunteersignup.org/P3TH3?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+        },
+        {
+          label: "Google Form",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSfM7YSL2Upzr8AecRgXA50XBTxVU4ske50CoqIMa-977X7ynA/viewform",
+        },
+      ],
+    },
+    {
+      title: "Follow us on socials",
+      links: [
+        {
+          label: "Instagram",
+          href: "https://www.instagram.com/sandalwoodfarm_ie/?hl=en",
+        },
+        {
+          label: "Linktree",
+          href: "https://linktr.ee/sandalwoodfarm_ie?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+        },
+        {
+          label: "Facebook",
+          href: "https://www.facebook.com/profile.php?id=61564082693703",
+        },
+      ],
+    },
+  ],
+} as const
 
 export const donate = {
-  lede: "Every gift helps feed residents, tend the gardens, and keep the hillside open to neighbors. Links below are placeholders — swap in your real URLs when ready.",
+  lede: "Every gift helps feed residents, tend the gardens, and keep the farm open to neighbors. Links below are placeholders — swap in your real URLs when ready.",
+  background: asset("GroupComposting.jpg"),
+  volunteer: {
+    title: "Volunteer",
+    blurb:
+      "Come for a morning or stay for the season — weeding beds, turning compost, mucking stalls, enriching animal spaces, and learning the rhythm of a working sanctuary. All ages and skill levels are welcome; we pair you with a task that fits and show you the ropes. Bring closed-toe shoes, water, and a willingness to get a little muddy. Sign up with either option below and we will be in touch with the next open day.",
+    signups: [
+      {
+        id: "google-form",
+        label: "Sign up via Google Form",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSfM7YSL2Upzr8AecRgXA50XBTxVU4ske50CoqIMa-977X7ynA/viewform",
+      },
+      {
+        id: "volunteer-signup-org",
+        label: "Sign up on VolunteerSignup.org",
+        href: "https://volunteersignup.org/P3TH3?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+      },
+    ],
+  },
   images: [
     {
-      src: asset("DonationBasket.jpg"),
-      alt: "Donation basket with garden supplies on the grass",
+      src: asset("groupPicture1.png"),
+      alt: "Four volunteers smiling together on the farm",
     },
     {
-      src: asset("Seeds.jpg"),
-      alt: "Seed packets and garden starts ready for planting",
+      src: asset("GroupPicture2.png"),
+      alt: "A group of volunteers gathered outdoors at the sanctuary",
     },
     {
-      src: asset("Chicken2.jpg"),
-      alt: "A chicken on the sanctuary grounds",
+      src: asset("GroupPicture3.png"),
+      alt: "Volunteers and neighbors together at Sandalwood Farm",
     },
   ],
   ways: [
@@ -196,26 +273,11 @@ export const donate = {
       cta: "Offer a donation",
     },
     {
-      id: "volunteer",
-      title: "Volunteer",
-      blurb: "Give your time on volunteer mornings — weeding, mucking, enrichment, and more.",
-      href: "#events",
-      cta: "See volunteer days",
-    },
-    {
       id: "quick-donate",
       title: "Quick money donation",
       blurb: "Make a one-time or recurring gift. This button is a placeholder for your payment link.",
       href: "#",
       cta: "Donate now",
-    },
-    {
-      id: "rewards",
-      title: "Rewards",
-      blurb:
-        "Placeholder for donor rewards, membership perks, or thank-you gifts. Details coming soon.",
-      href: "#",
-      cta: "Learn about rewards",
     },
   ],
 }
@@ -235,14 +297,22 @@ export const visit = {
 }
 
 export const socials = [
-  { name: "Facebook", href: "#" },
-  { name: "Instagram", href: "#" },
-  { name: "X", href: "#" },
-  { name: "YouTube", href: "#" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/sandalwoodfarm_ie/?hl=en",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61564082693703",
+  },
+  {
+    name: "Linktree",
+    href: "https://linktr.ee/sandalwoodfarm_ie?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+  },
 ]
 
 export const contactInfo = {
-  email: "hello@sandalwoodfarmsanctuary.org",
+  email: "hello@placeholder.email",
   phone: "(555) 014-1842",
 }
 
@@ -250,5 +320,12 @@ export const newsletter = {
   lede: "Get seasonal notes from the barns, gardens, and residents — drop your email below.",
 }
 
-export const heroImage = asset("ScenicPictures1.jpg")
+export const heroImages = [
+  asset("Soil.jpg"),
+  asset("Produce.jpg"),
+  asset("CircleGroupMeeting.jpg"),
+  asset("Seeds.jpg"),
+]
 export const scenicImage = asset("SenicPictures2.jpg")
+export const bountyBackground = asset("plantsdirtlot.png")
+export const contactBackground = asset("Rooted in ReciprocityRock.png")

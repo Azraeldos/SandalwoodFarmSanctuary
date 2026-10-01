@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react"
+
 type HeroBannerProps = {
-  image: string
+  images: string[]
   kicker?: string
   title: string
   quote?: string
@@ -10,57 +12,86 @@ type HeroBannerProps = {
   secondaryLabel?: string
 }
 
+const FADE_MS = 1200
+const HOLD_MS = 4200
+
 export function HeroBanner({
-  image,
+  images,
   kicker,
   title,
   quote,
   subtitle,
-  primaryHref = "#events",
-  primaryLabel = "Upcoming events",
+  primaryHref = "#updates",
+  primaryLabel = "Farm Happenings",
   secondaryHref = "#contact",
   secondaryLabel = "Contact us",
 }: HeroBannerProps) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length <= 1) return
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
+    if (reduceMotion.matches) return
+
+    const id = window.setInterval(() => {
+      setIndex((current) => (current + 1) % images.length)
+    }, HOLD_MS)
+
+    return () => window.clearInterval(id)
+  }, [images.length])
+
   return (
-    <section id="top" className="relative isolate min-h-[72svh] overflow-hidden">
-      <img
-        src={image}
-        alt="Rolling farmland at dusk with a barn in the distance"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-soil/50 to-forest/15" />
-      <div className="relative mx-auto flex min-h-[72svh] max-w-6xl flex-col justify-end px-4 py-16 sm:px-6 sm:py-20">
-        {kicker ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-parchment">
-            {kicker}
-          </p>
-        ) : null}
-        <h1
-          className={`max-w-3xl font-display text-4xl font-medium leading-tight text-cream sm:text-6xl ${kicker ? "mt-3" : ""}`}
-        >
-          {title}
-        </h1>
-        {quote ? (
-          <p className="mt-4 max-w-xl font-display text-xl italic leading-snug text-cream/95 sm:text-2xl">
-            “{quote}”
-          </p>
-        ) : null}
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg">
-          {subtitle}
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href={primaryHref}
-            className="rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-clay"
+    <section id="top" className="relative isolate">
+      <div className="relative min-h-[78svh] overflow-hidden">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden={i !== index}
+            className="absolute inset-0 h-full w-full object-cover object-center transition-opacity ease-in-out"
+            style={{
+              opacity: i === index ? 1 : 0,
+              transitionDuration: `${FADE_MS}ms`,
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest/84 via-forest/42 to-ochre/10" />
+        <div className="african-textile pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto flex min-h-[78svh] max-w-6xl flex-col justify-end px-4 py-16 text-center sm:px-6 sm:py-20 sm:text-left">
+          {kicker ? (
+            <p className="type-glow font-display text-lg font-bold tracking-[-0.02em] text-saffron sm:text-xl">
+              {kicker}
+            </p>
+          ) : null}
+          <h1
+            className={`hero-title mx-auto max-w-5xl font-display text-6xl font-bold leading-[1.05] tracking-[-0.03em] text-saffron sm:mx-0 sm:text-7xl lg:text-8xl ${kicker ? "mt-3" : ""}`}
           >
-            {primaryLabel}
-          </a>
-          <a
-            href={secondaryHref}
-            className="rounded-full border border-cream/70 bg-cream/10 px-5 py-2.5 text-sm font-semibold text-cream backdrop-blur-sm transition hover:bg-cream/20"
-          >
-            {secondaryLabel}
-          </a>
+            {title}
+          </h1>
+          {quote ? (
+            <p className="type-glow mx-auto mt-5 max-w-2xl font-display text-3xl font-bold leading-snug tracking-[-0.02em] text-saffron sm:mx-0 sm:text-4xl">
+              “{quote}”
+            </p>
+          ) : null}
+          <p className="type-glow mx-auto mt-4 max-w-2xl font-display text-xl leading-relaxed tracking-[-0.01em] text-saffron/95 sm:mx-0 sm:text-2xl">
+            {subtitle}
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
+            <a
+              href={primaryHref}
+              className="rounded-full bg-ochre px-5 py-2.5 font-display text-sm font-bold tracking-[-0.01em] text-forest shadow-sm transition hover:bg-gold"
+            >
+              {primaryLabel}
+            </a>
+            <a
+              href={secondaryHref}
+              className="rounded-full border border-saffron/70 bg-cream/10 px-5 py-2.5 font-display text-sm font-bold tracking-[-0.01em] text-saffron backdrop-blur-sm transition hover:bg-cream/20"
+            >
+              {secondaryLabel}
+            </a>
+          </div>
         </div>
       </div>
     </section>

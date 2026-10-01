@@ -129,9 +129,9 @@ export function LeafDivider({ className = "" }: { className?: string }) {
       className={`flex items-center gap-3 text-moss/70 ${className}`}
       aria-hidden="true"
     >
-      <span className="h-px w-12 bg-moss/30 sm:w-20" />
+      <span className="h-px w-12 bg-current opacity-40 sm:w-20" />
       <BotanicalAccent variant="sprig" className="h-8 w-8 leaf-drift" />
-      <span className="h-px w-12 bg-moss/30 sm:w-20" />
+      <span className="h-px w-12 bg-current opacity-40 sm:w-20" />
     </div>
   )
 }

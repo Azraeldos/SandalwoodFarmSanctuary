@@ -9,16 +9,16 @@ export function Logo({ className = "h-9 w-9" }: { className?: string }) {
       <rect width="32" height="32" rx="8" className="fill-forest" />
       <path
         d="M16 6c6.5 5 10 11.5 10 17.5H6C6 17.5 9.5 11 16 6Z"
-        className="fill-moss"
+        className="fill-gold"
       />
       <path
         d="M11 18c3 1 5 1 7-1-1-5-3.5-8-6.5-9-1 3.5-.5 7-.5 10Z"
-        className="fill-sage"
+        className="fill-saffron"
         opacity="0.9"
       />
       <path
         d="M21 18c-3 1-5 1-7-1 1-5 3.5-8 6.5-9 1 3.5.5 7 .5 10Z"
-        className="fill-leaf"
+        className="fill-ochre"
         opacity="0.85"
       />
       <path

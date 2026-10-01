@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 28" width="72" height="28" fill="none">
+  <!-- Seamless mustard squiggle tile — peak → trough over one period -->
+  <path
+    d="M0 14 Q18 2 36 14 T72 14"
+    stroke="#f3d060"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
