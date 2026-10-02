@@ -1,35 +1,10 @@
 import { asset } from "../data/content"
 
 export const textiles = {
-  spirals: asset("africanPictures/african20129.jpg"),
-  stripes: asset("africanPictures/tt25_2.jpg"),
   rug: asset("africanPictures/AfricanRugimages.jpg"),
-  scarf: asset(
-    "africanPictures/modern_tribal_african_giraffe_pattern_animal_print_scarf-r8926c2f24d3148fcacf67bd9da15b1d3_eqr7z_644.jpg",
-  ),
-  woven: asset("africanPictures/istockphoto-869822094-612x612.jpg"),
-  kilim: asset("africanPictures/images.jpg"),
-  hearts: asset(
-    "africanPictures/black-history-month-banner-decorative-260nw-2573518031.jpg",
-  ),
-  lion: asset("africanPictures/75096-A.jpg"),
-  outline: asset(
-    "africanPictures/africa-continent-outline-heart-symbol-black-line-art-transparent-background-vector-illustration-africa-continent-outline-401909529.webp",
-  ),
-  abstract: asset(
-    "africanPictures/abstract-tribal-elements-traditional-african-stylife-africa-ethnic-seamless-pattern-modern-art-print-mounir-khalfouf.jpg",
-  ),
-  masks: asset("africanPictures/360_F_957771251_aXP6WbnUhC6rXk3aK4xKMYplXT3vZXWK.jpg"),
   maskSeamless: asset(
     "africanPictures/seamless-pattern-tribal-african-masks-vector-illustration-73159983.webp",
   ),
-  patchwork: asset(
-    "africanPictures/colorful-patchwork-map-africa-with-vibrant-geometric-patterns_53876-2152090336.avif",
-  ),
-  maskPattern: asset(
-    "africanPictures/african-ethnic-tribal-masks-seamless-pattern_1284-16716.avif",
-  ),
-  tribal: asset("africanPictures/1151b568-38ab-4f10-8cf5-e91344a72a8f.avif"),
 } as const
 
 export const squiggleDivider = asset("squiggle-divider.svg")

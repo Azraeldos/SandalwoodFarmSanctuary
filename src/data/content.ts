@@ -10,8 +10,6 @@ export const site = {
   quote: "Rooted in Reciprocity",
   description:
     "Sandalwood Farm & Sanctuary is a small working farm and refuge where rescued animals, kitchen gardens, and community gatherings share the same home.",
-  placeholderNote:
-    "Placeholder details — replace this copy, hours, address, and social links when you are ready.",
 }
 
 export const whatWeDo = {
@@ -22,7 +20,7 @@ export const whatWeDo = {
       title: "Rescue",
       icon: "heart" as const,
       blurb:
-        "Rescued farm animals live out their days here — room to wander, a steady routine, and people who know them by name.",
+        "Rescued farm animals live out their days here room to wander, a steady routine, and people who know them by name.",
     },
     {
       title: "Educate",
@@ -34,7 +32,7 @@ export const whatWeDo = {
       title: "Advocate",
       icon: "megaphone" as const,
       blurb:
-        "We speak up for kinder farming and keep the farm open — a place neighbors can gather, learn, and belong.",
+        "We speak up for kinder farming and keep the farm open. A place neighbors can gather, learn, and belong.",
     },
   ],
 }
@@ -77,103 +75,81 @@ export const animals = [
   },
 ]
 
+export const bounty = {
+  kicker: "From the beds",
+  title: "Our bounty",
+  lede: "Raised beds and garden rows grown beside the animals. What ripens goes to share tables, the compost, and the daily work of the farm greens, fruit, and herbs tended by the same hands that care for our residents.",
+}
+
 export const crops = [
   {
-    id: "raised-beds",
-    name: "Raised beds",
-    season: "Spring–fall",
+    id: "vegetables",
+    name: "Vegetables",
     image: asset("Crops.jpg"),
+    imageAlt: "Raised beds full of leafy greens and garden vegetables",
     blurb:
-      "Wooden beds overflowing with greens, herbs, and flowers that feed the kitchen and the compost pile.",
+      "Greens, roots, and kitchen staples fill the wooden beds through the growing season. Volunteers weed, water, and harvest so share tables stay stocked and the compost pile never goes hungry.",
   },
   {
-    id: "garden-rows",
-    name: "Garden rows",
-    season: "Growing season",
-    image: asset("Crops2.jpg"),
+    id: "fruit",
+    name: "Fruit",
+    image: asset("Produce.jpg"),
+    imageAlt: "Fresh harvest of produce from the farm beds",
     blurb:
-      "Rows of produce tended by volunteers — the heart of what we grow for share tables and residents.",
+      "Seasonal fruit ripens in its own time picked warm from the plant and carried in by the armful. What we gather that week becomes snacks for visitors, gifts for neighbors, and color on the kitchen table.",
   },
   {
-    id: "harvest-bounty",
-    name: "Harvest bounty",
-    season: "Late summer",
-    image: asset("greenCabage.png"),
+    id: "medicinal",
+    name: "Medicinal",
+    image: asset("Seeds.jpg"),
+    imageAlt: "Seed packets for herbs and medicinal plants",
     blurb:
-      "Peak-season color from the beds: greens, blooms, and whatever the garden decided to ripen that week.",
+      "Herbs and healing plants for our community. Lemon balm, teas, and quiet remedies grow to serve as a reminder that the garden feeds more than hunger alone.",
   },
 ]
+
+export const farmHappenings = {
+  kicker: "On the farm",
+  title: "Farm Happenings",
+  lede: "Recent work around the farm and a quick way to get seasonal notes in your inbox.",
+}
 
 export const updates = [
   {
     id: "harvest-carry",
     date: "Recent",
-    title: "Harvest day haul",
+    title: "Harvest Day Haul",
     image: asset("CarryingBounty.png"),
     blurb:
-      "Arms full of greens from the rows — neighbors carrying crates together after a morning in the beds.",
+      "Arms full of greens from the rows, neighbors carrying crates together after a morning in the beds.",
   },
   {
     id: "meet-the-animals",
     date: "Recent",
-    title: "Meet the animals morning",
+    title: "Meet The Animals Morning",
     image: asset("TeachingGroupKids.png"),
     blurb:
-      "Kids and families gather on the mulch to meet our residents up close — soft voices, curious hands, and a calm black rabbit at the center.",
+      "Kids and families gather on the mulch to meet our residents up close. Soft voices, curious hands, and a calm black rabbit at the center.",
   },
   {
     id: "compost-day",
     date: "Recent",
-    title: "Compost work day",
+    title: "Compost Work Day",
     image: asset("CompostDay.png"),
     blurb:
-      "Bins rinsed, piles turned, and wood chips moved — the unglamorous work that keeps next season’s soil rich.",
-  },
-]
-
-export const events = [
-  {
-    id: "harvest-potluck",
-    name: "Harvest potluck",
-    when: "Saturday, October 12 · 12:00–3:00 PM",
-    where: "Orchard lawn",
-    blurb:
-      "A casual afternoon at the farm. Bring a dish if you can; tours of the barns start on the hour.",
-  },
-  {
-    id: "yoga-dusk",
-    name: "Dusk yoga by the pool",
-    when: "Select evenings · sunset",
-    where: "Pool lawn",
-    blurb:
-      "Gentle movement under the string lights. Bring a mat; all levels welcome.",
-  },
-  {
-    id: "volunteer-mornings",
-    name: "Volunteer mornings",
-    when: "Saturdays · 9:00 AM",
-    where: "Meet at the barn gate",
-    blurb:
-      "Mucking, weeding, fence checks, and animal enrichment. No experience needed — we will put you to work gently.",
-  },
-  {
-    id: "school-visits",
-    name: "School & group visits",
-    when: "Weekdays, by appointment",
-    where: "Whole farm loop",
-    blurb:
-      "Curriculum-friendly walks covering animal care and soil. Reach out via Get in touch to reserve a date.",
+      "Bins rinsed, piles turned, and wood chips moved. The unglamorous work that keeps next season’s soil rich.",
   },
 ]
 
 export const contact = {
   title: "Get in touch",
   kicker: "Say hello",
+  lede: "Whether you want to visit, volunteer, book the land, or simply say hello we would love to hear from you. Reach out by email or use the links below to find the right door in.",
   emailNote: "For general inquiries and item donations please email",
   emailPlaceholder: "sandalwoodfarmandsanctuary@gmail.com",
   groups: [
     {
-      title: "Book with us",
+      title: "Book With Us",
       links: [
         {
           label: "Peerspace",
@@ -203,7 +179,7 @@ export const contact = {
       ],
     },
     {
-      title: "Follow us on socials",
+      title: "Follow Our Socials",
       links: [
         {
           label: "Instagram",
@@ -223,21 +199,21 @@ export const contact = {
 } as const
 
 export const donate = {
-  lede: "Every gift helps feed residents, tend the gardens, and keep the farm open to neighbors. Links below are placeholders — swap in your real URLs when ready.",
+  lede: "Every gift helps feed residents, tend the gardens, and keep the farm open to neighbors.",
   background: asset("GroupComposting.jpg"),
   volunteer: {
     title: "Volunteer",
     blurb:
-      "Come for a morning or stay for the season — weeding beds, turning compost, mucking stalls, enriching animal spaces, and learning the rhythm of a working sanctuary. All ages and skill levels are welcome; we pair you with a task that fits and show you the ropes. Bring closed-toe shoes, water, and a willingness to get a little muddy. Sign up with either option below and we will be in touch with the next open day.",
+      "Come for a morning or stay for the season! Typical days involve weeding beds, turning compost, enriching animal spaces, and learning the rhythm of a working sanctuary. All ages and skill levels are welcome! We pair you with a task that fits and show you the ropes. Bring closed-toe shoes, water, and a willingness to get a little muddy. Sign up with either option below and we will be in touch with the next open day.",
     signups: [
       {
         id: "google-form",
-        label: "Sign up via Google Form",
+        label: "Sign up with Google Form",
         href: "https://docs.google.com/forms/d/e/1FAIpQLSfM7YSL2Upzr8AecRgXA50XBTxVU4ske50CoqIMa-977X7ynA/viewform",
       },
       {
         id: "volunteer-signup-org",
-        label: "Sign up on VolunteerSignup.org",
+        label: "Sign up with VolunteerSignup.org",
         href: "https://volunteersignup.org/P3TH3?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
       },
     ],
@@ -246,6 +222,7 @@ export const donate = {
     {
       src: asset("groupPicture1.png"),
       alt: "Four volunteers smiling together on the farm",
+      objectPosition: "center 20%",
     },
     {
       src: asset("GroupPicture2.png"),
@@ -255,18 +232,22 @@ export const donate = {
       src: asset("GroupPicture3.png"),
       alt: "Volunteers and neighbors together at Sandalwood Farm",
     },
+    {
+      src: asset("GroupPicture4.jpg"),
+      alt: "Volunteers smiling together outdoors at the farm",
+    },
   ],
   ways: [
     {
       id: "amazon-wishlist",
-      title: "Amazon wishlist",
-      blurb: "Shop our placeholder wishlist for everyday supplies the sanctuary needs most.",
+      title: "Amazon Wishlist",
+      blurb: "Shop our wishlist for everyday supplies the sanctuary needs most.",
       href: "#",
       cta: "View wishlist",
     },
     {
       id: "in-kind",
-      title: "Equipment, tools & feed",
+      title: "Equipment, Tools & Feed",
       blurb:
         "Donate equipment, tools, feed, bedding, and other in-kind goods. Contact us to arrange a drop-off.",
       href: "#contact",
@@ -274,26 +255,12 @@ export const donate = {
     },
     {
       id: "quick-donate",
-      title: "Quick money donation",
-      blurb: "Make a one-time or recurring gift. This button is a placeholder for your payment link.",
+      title: "Monitary Donation",
+      blurb: "Whether you make a one-time gift or choose to give monthly, your donation directly funds the preservation of our sanctuary.",
       href: "#",
       cta: "Donate now",
     },
   ],
-}
-
-export const visit = {
-  hours: [
-    { days: "Saturday – Sunday", time: "10:00 AM – 4:00 PM" },
-    { days: "Monday – Friday", time: "By appointment" },
-    { days: "Major holidays", time: "Closed" },
-  ],
-  addressLines: [
-    "1842 Sandalwood Ridge Road",
-    "Placeholder County, OR 97000",
-  ],
-  notes:
-    "This address is a placeholder. Replace it with your real location, parking notes, and accessibility details.",
 }
 
 export const socials = [
@@ -311,13 +278,9 @@ export const socials = [
   },
 ]
 
-export const contactInfo = {
-  email: "hello@placeholder.email",
-  phone: "(555) 014-1842",
-}
-
 export const newsletter = {
-  lede: "Get seasonal notes from the barns, gardens, and residents — drop your email below.",
+  title: "Stay in the loop",
+  lede: "Get seasonal notes from the barns, gardens, and residents drop your email below.",
 }
 
 export const heroImages = [
@@ -326,6 +289,5 @@ export const heroImages = [
   asset("CircleGroupMeeting.jpg"),
   asset("Seeds.jpg"),
 ]
-export const scenicImage = asset("SenicPictures2.jpg")
 export const bountyBackground = asset("plantsdirtlot.png")
 export const contactBackground = asset("Rooted in ReciprocityRock.png")

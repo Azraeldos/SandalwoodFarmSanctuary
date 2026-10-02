@@ -1,31 +1,5 @@
 import type { ReactNode } from "react"
 
-type PageHeaderProps = {
-  kicker?: string
-  title: string
-  lede: string
-}
-
-export function PageHeader({ kicker, title, lede }: PageHeaderProps) {
-  return (
-    <header className="border-b border-forest/10 bg-parchment/60">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        {kicker ? (
-          <p className="font-display text-sm font-bold tracking-[-0.01em] text-moss">
-            {kicker}
-          </p>
-        ) : null}
-        <h1 className="mt-2 font-display text-4xl font-bold tracking-[-0.02em] text-forest sm:text-5xl">
-          {title}
-        </h1>
-        <p className="mt-4 max-w-2xl font-display text-lg leading-relaxed tracking-[-0.01em] text-soil sm:text-xl">
-          {lede}
-        </p>
-      </div>
-    </header>
-  )
-}
-
 export function Section({
   children,
   className = "",

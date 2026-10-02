@@ -190,7 +190,8 @@ export function ContactLinks() {
           <ContactIcon name="mail" />
         </span>
         <span>
-          {contact.emailNote}{" "}
+          For general inquiries and{" "}
+          <span className="font-bold underline underline-offset-4">item donations</span> please email{" "}
           <a
             href={`mailto:${contact.emailPlaceholder}`}
             className="font-bold text-forest underline underline-offset-4 transition hover:text-moss"

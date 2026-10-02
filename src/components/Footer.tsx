@@ -100,28 +100,29 @@ export function Footer() {
             ))}
           </div>
 
-          <a
-            href="#donate-quick"
-            className="type-glow green-glow-light mt-5 inline-flex rounded-full border border-cream/50 bg-cream/10 px-4 py-2 font-display text-sm font-bold tracking-[-0.01em] text-cream"
-          >
-            Donate
-          </a>
-
-          <ul className="mt-6 flex items-center gap-3">
-            {socials.map((social) => (
-              <li key={social.name}>
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="green-glow-social inline-flex h-9 w-9 items-center justify-center rounded-full border border-cream/50 text-cream"
-                  aria-label={social.name}
-                >
-                  <SocialIcon name={social.name} />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <a
+              href="#donate-quick"
+              className="type-glow green-glow-light inline-flex rounded-full border border-cream/50 bg-cream/10 px-4 py-2 font-display text-sm font-bold tracking-[-0.01em] text-cream"
+            >
+              Donate
+            </a>
+            <ul className="flex items-center gap-3">
+              {socials.map((social) => (
+                <li key={social.name}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="green-glow-social inline-flex h-9 w-9 items-center justify-center rounded-full border border-cream/50 text-cream"
+                    aria-label={social.name}
+                  >
+                    <SocialIcon name={social.name} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

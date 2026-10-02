@@ -1,5 +1,5 @@
 import { ContactLinks } from "../components/ContactLinks"
-import { BotanicalAccent, LeafFrame } from "../components/BotanicalAccent"
+import { BotanicalAccent, LeafDivider, LeafFrame } from "../components/BotanicalAccent"
 import { PatternFill, SquiggleEdge, textiles } from "../components/TextileDivider"
 import { HeroBanner } from "../components/HeroBanner"
 import { NewsletterForm } from "../components/NewsletterForm"
@@ -8,11 +8,12 @@ import { Section } from "../components/PageHeader"
 import { WhatWeDo } from "../components/WhatWeDo"
 import {
   animals,
-  bountyBackground,
+  bounty,
   contact,
   contactBackground,
   crops,
   donate,
+  farmHappenings,
   heroImages,
   newsletter,
   updates,
@@ -47,66 +48,80 @@ export function Home() {
         id="crops"
         className="relative -mt-[1.75rem] scroll-mt-24 overflow-hidden pt-[1.75rem]"
       >
-        <PatternFill
-          src={bountyBackground}
-          scrim="bg-soil/70"
-          squiggle="top"
+        <div
+          className="pointer-events-none absolute inset-0 bg-soil squiggle-mask-top"
+          aria-hidden="true"
         />
         <SquiggleEdge edge="top" color="turquoise" />
+        {/* Left-side accents */}
+        <BotanicalAccent
+          variant="fern"
+          className="pointer-events-none absolute top-16 -left-2 h-28 w-28 text-sage/30 leaf-drift sm:left-2 sm:h-36 sm:w-36 lg:left-4"
+        />
+        <BotanicalAccent
+          variant="cluster"
+          className="pointer-events-none absolute top-1/2 -left-4 h-24 w-36 -translate-y-1/2 text-saffron/20 leaf-drift-delayed sm:left-0 sm:h-28 sm:w-44"
+        />
+        <BotanicalAccent
+          variant="sprig"
+          className="pointer-events-none absolute bottom-20 -left-1 h-20 w-20 text-moss/25 leaf-drift sm:left-3 sm:h-24 sm:w-24"
+        />
+        {/* Right-side accents */}
         <BotanicalAccent
           variant="branch"
-          className="pointer-events-none absolute top-10 -left-4 h-12 w-36 text-moss/20 sm:left-0 sm:h-14 sm:w-44"
+          className="pointer-events-none absolute top-20 -right-6 h-14 w-44 text-sage/25 leaf-drift-delayed sm:right-2 sm:h-16 sm:w-52 lg:right-6"
         />
         <BotanicalAccent
           variant="fern"
-          className="pointer-events-none absolute right-2 bottom-8 h-24 w-24 text-sage/25 leaf-drift sm:right-8"
+          className="pointer-events-none absolute top-[58%] -right-2 h-28 w-28 text-saffron/22 leaf-drift sm:right-4 sm:h-36 sm:w-36"
+        />
+        <BotanicalAccent
+          variant="cluster"
+          className="pointer-events-none absolute bottom-12 -right-3 h-24 w-24 text-sage/28 leaf-drift-delayed sm:right-6 sm:h-32 sm:w-32"
         />
         <Section className="relative z-10">
+          <LeafDivider className="mb-8 text-sage/70" />
           <p className="font-display text-lg font-bold tracking-[-0.01em] text-sage sm:text-xl">
-            From the beds
+            {bounty.kicker}
           </p>
           <h2 className="type-glow mt-2 font-display text-4xl font-bold tracking-[-0.02em] text-saffron sm:text-5xl">
-            Our bounty
+            {bounty.title}
           </h2>
-          <p className="type-glow mt-4 max-w-5xl font-display text-xl leading-relaxed tracking-[-0.01em] text-saffron/90 sm:text-2xl">
-            Gardens, orchard rows, and plantings we tend alongside the animals.
+          <p className="type-glow mt-4 max-w-3xl font-display text-xl leading-relaxed tracking-[-0.01em] text-saffron/90 sm:text-2xl">
+            {bounty.lede}
           </p>
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {crops.map((crop, i) => (
-              <article
-                key={crop.id}
-                className={[
-                  "bg-white/75 p-3 backdrop-blur-[2px]",
-                  i % 3 === 0
-                    ? "rounded-[2.5rem_1.25rem_2.75rem_1.5rem]"
-                    : i % 3 === 1
-                      ? "rounded-[1.5rem_2.75rem_1.25rem_2.5rem] sm:mt-6"
-                      : "rounded-[2.25rem_1.75rem_1.5rem_2.75rem] sm:-mt-2",
-                ].join(" ")}
-              >
-                <img
-                  src={crop.image}
-                  alt={crop.name}
-                  className={[
-                    "h-52 w-full object-cover",
-                    i % 3 === 0
-                      ? "rounded-[2rem_1rem_2.25rem_1.25rem]"
-                      : i % 3 === 1
-                        ? "rounded-[1.25rem_2.25rem_1rem_2rem]"
-                        : "rounded-[1.75rem_1.5rem_1.25rem_2.25rem]",
-                  ].join(" ")}
-                />
-                <div className="px-3 pt-4 pb-2">
-                  <p className="font-display text-sm font-bold tracking-[-0.01em] text-moss">
-                    {crop.season}
-                  </p>
-                  <h3 className={cardTitleClass}>{crop.name}</h3>
-                  <p className="mt-2 font-display text-base leading-relaxed tracking-[-0.01em] text-soil">
-                    {crop.blurb}
-                  </p>
-                </div>
-              </article>
-            ))}
+
+          <div className="mt-12 space-y-14 sm:mt-14 sm:space-y-16">
+            {crops.map((crop, i) => {
+              const flipped = i % 2 === 1
+              return (
+                <article
+                  key={crop.id}
+                  className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
+                >
+                  <div className={flipped ? "lg:order-2" : undefined}>
+                    <h3 className="type-glow font-display text-3xl font-bold tracking-[-0.02em] text-saffron sm:text-4xl">
+                      {crop.name}
+                    </h3>
+                    <p className="type-glow mt-3 max-w-xl font-display text-lg leading-relaxed tracking-[-0.01em] text-saffron/90 sm:text-xl">
+                      {crop.blurb}
+                    </p>
+                  </div>
+                  <div
+                    className={[
+                      "overflow-hidden rounded-[1.75rem_2.5rem_1.5rem_2.25rem] ring-1 ring-cream/15",
+                      flipped ? "lg:order-1" : "",
+                    ].join(" ")}
+                  >
+                    <img
+                      src={crop.image}
+                      alt={crop.imageAlt}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </Section>
       </section>
@@ -118,11 +133,9 @@ export function Home() {
         <PatternFill src={textiles.maskSeamless} scrim="bg-cream/80" squiggle="top" />
         <SquiggleEdge edge="top" color="rust" />
         <Section className="relative z-10">
-          <p className={kickerClass}>On the farm</p>
-          <h2 className={sectionTitleClass}>Farm Happenings</h2>
-          <p className={bodyClass}>
-            Recent work around the farm — and a quick way to get seasonal notes in your inbox.
-          </p>
+          <p className={kickerClass}>{farmHappenings.kicker}</p>
+          <h2 className={sectionTitleClass}>{farmHappenings.title}</h2>
+          <p className={bodyClass}>{farmHappenings.lede}</p>
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {updates.map((item) => (
               <article
@@ -154,13 +167,13 @@ export function Home() {
             className="mt-10 scroll-mt-24 rounded-2xl bg-parchment/80 p-6 ring-1 ring-moss/15 sm:p-8"
           >
             <h3 className="font-display text-3xl font-bold tracking-[-0.02em] text-forest sm:text-4xl">
-              Stay in the loop
+              {newsletter.title}
             </h3>
             <p className="mt-3 max-w-5xl font-display text-xl leading-relaxed tracking-[-0.01em] text-soil sm:text-2xl">
               {newsletter.lede}
             </p>
             <div className="mt-5 max-w-3xl">
-              <NewsletterForm compact />
+              <NewsletterForm />
             </div>
           </div>
         </Section>
@@ -194,7 +207,7 @@ export function Home() {
             {donate.volunteer.blurb}
           </p>
 
-          <div className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
             {donate.images.map((image) => (
               <div
                 key={image.src}
@@ -205,6 +218,11 @@ export function Home() {
                     src={image.src}
                     alt={image.alt}
                     className="aspect-[4/3] w-full object-cover"
+                    style={
+                      image.objectPosition
+                        ? { objectPosition: image.objectPosition }
+                        : undefined
+                    }
                   />
                 </LeafFrame>
               </div>
@@ -264,6 +282,7 @@ export function Home() {
         <Section id="contact" className="relative z-10">
           <p className={kickerClass}>{contact.kicker}</p>
           <h2 className={sectionTitleClass}>{contact.title}</h2>
+          <p className={bodyClass}>{contact.lede}</p>
           <div className="mt-8 max-w-5xl">
             <ContactLinks />
           </div>
