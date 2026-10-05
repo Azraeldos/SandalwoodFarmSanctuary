@@ -39,25 +39,28 @@ export const whatWeDo = {
 
 export const animals = [
   {
-    id: "alpaca-1",
-    name: "Alpaca 1",
-    species: "Alpaca",
-    image: asset("Alpca1.jpg"),
-    story: "Placeholder — swap in this alpaca’s name and story when ready.",
-  },
-  {
     id: "alpaca-2",
-    name: "Alpaca 2",
+    name: "Alpaca",
     species: "Alpaca",
-    image: asset("Alpca1.jpg"),
-    story: "Placeholder — swap in this alpaca’s name and story when ready.",
+    image: asset("alpca2.jpg"),
+    story:
+      "The mother of our other alpacas — they were rescued together and now share a forever home here.",
   },
   {
     id: "alpaca-3",
-    name: "Alpaca 3",
+    name: "Alpaca",
     species: "Alpaca",
-    image: asset("Alpca1.jpg"),
-    story: "Placeholder — swap in this alpaca’s name and story when ready.",
+    image: asset("alpca3.jpg"),
+    story:
+      "Rescued with her mother and sister — now settled into life at the sanctuary.",
+  },
+  {
+    id: "alpaca-4",
+    name: "Alpaca",
+    species: "Alpaca",
+    image: asset("alpca4.jpg"),
+    story:
+      "Rescued with her mother and sister — now settled into life at the sanctuary.",
   },
   {
     id: "tortoise",
@@ -70,8 +73,9 @@ export const animals = [
     id: "goat",
     name: "Goat",
     species: "Goat",
-    image: asset("EarlyPicture.jpg"),
-    story: "Placeholder — swap in this goat’s photo, name, and story when ready.",
+    image: asset("goat1.jpg"),
+    story:
+      "One of our goat residents — curious, bold, and always ready for a closer look.",
   },
 ]
 
@@ -93,16 +97,16 @@ export const crops = [
   {
     id: "fruit",
     name: "Fruit",
-    image: asset("Produce.jpg"),
-    imageAlt: "Fresh harvest of produce from the farm beds",
+    image: asset("pumpkins.jpg"),
+    imageAlt: "Bright orange pumpkins lined up on log borders in the garden",
     blurb:
       "Seasonal fruit ripens in its own time picked warm from the plant and carried in by the armful. What we gather that week becomes snacks for visitors, gifts for neighbors, and color on the kitchen table.",
   },
   {
     id: "medicinal",
     name: "Medicinal",
-    image: asset("Seeds.jpg"),
-    imageAlt: "Seed packets for herbs and medicinal plants",
+    image: asset("CubanOregano.jpg"),
+    imageAlt: "Lush Cuban oregano leaves growing in the herb garden",
     blurb:
       "Herbs and healing plants for our community. Lemon balm, teas, and quiet remedies grow to serve as a reminder that the garden feeds more than hunger alone.",
   },
