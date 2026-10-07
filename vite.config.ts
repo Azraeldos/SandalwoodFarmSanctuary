@@ -17,6 +17,6 @@ function githubPagesSpaFallback() {
 }
 
 export default defineConfig({
-  base: '/SandalwoodFarmSanctuary/',
+  base: '/',
   plugins: [react(), tailwindcss(), githubPagesSpaFallback()],
 })

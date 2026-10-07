@@ -11,9 +11,9 @@ npm install
 npm run dev
 ```
 
-The Vite `base` path is `/SandalwoodFarmSanctuary/`, so the app is served at:
+Locally the app is served at the root:
 
-`http://localhost:5173/SandalwoodFarmSanctuary/`
+`http://localhost:5173/`
 
 ```bash
 npm run build
@@ -22,14 +22,16 @@ npm run preview
 
 ## GitHub Pages
 
-1. Push this repository to GitHub (repo name `SandalwoodFarmSanctuary` keeps the base path in sync).
+Custom domain: `https://sandalwoodfarmandsanctuary.com/` (`public/CNAME`, Vite `base: '/'`).
+
+1. Push this repository to GitHub.
 2. In the repo, open **Settings → Pages**.
 3. Set **Source** to **GitHub Actions**.
-4. Push to `main` (or run the **Deploy GitHub Pages** workflow). The site will be at:
+4. Under **Custom domain**, enter `sandalwoodfarmandsanctuary.com` and save. Enable **Enforce HTTPS** once DNS checks pass.
+5. At your DNS host, point the apex domain at GitHub Pages with A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Optional: CNAME `www` → `<your-username>.github.io`.
+6. Push to `master` (or run the **Deploy GitHub Pages** workflow).
 
-`https://<your-username>.github.io/SandalwoodFarmSanctuary/`
-
-The workflow builds the site, copies `index.html` to `404.html` so React Router refreshes work, and deploys `dist/`.
+The workflow builds the site, copies `index.html` to `404.html` so React Router refreshes work, and deploys `dist/` (including `CNAME`).
 
 ## Forms
 
