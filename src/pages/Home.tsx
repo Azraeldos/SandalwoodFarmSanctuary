@@ -16,6 +16,7 @@ import {
   farmHappenings,
   heroImages,
   newsletter,
+  stayWithUs,
   updates,
   site,
   whatWeDo,
@@ -127,6 +128,84 @@ export function Home() {
       </section>
 
       <section
+        id="stay"
+        className="relative -mt-[1.75rem] scroll-mt-24 overflow-hidden pt-[1.75rem]"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 bg-parchment squiggle-mask-top"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 squiggle-mask-top opacity-40"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 70% 50% at 10% 20%, rgb(196 150 42 / 0.28), transparent 55%), radial-gradient(ellipse 60% 45% at 90% 70%, rgb(27 101 90 / 0.14), transparent 50%)",
+          }}
+        />
+        <SquiggleEdge edge="top" color="ochre" />
+        <BotanicalAccent
+          variant="sprig"
+          className="pointer-events-none absolute top-20 -left-2 h-20 w-20 text-moss/25 leaf-drift sm:left-3 sm:h-24 sm:w-24"
+        />
+        <BotanicalAccent
+          variant="fern"
+          className="pointer-events-none absolute bottom-16 -right-2 h-28 w-28 text-sage/30 leaf-drift-delayed sm:right-4 sm:h-36 sm:w-36"
+        />
+        <Section className="relative z-10">
+          <LeafDivider className="mb-8 text-moss/60" />
+          <p className={kickerClass}>{stayWithUs.kicker}</p>
+          <h2 className={sectionTitleClass}>{stayWithUs.title}</h2>
+          <p className={bodyClass}>{stayWithUs.lede}</p>
+
+          <figure className="mt-12">
+            <div className="overflow-hidden rounded-[1.75rem_2.5rem_1.5rem_2.25rem] ring-1 ring-moss/15">
+              <img
+                src={stayWithUs.featured.image}
+                alt={stayWithUs.featured.imageAlt}
+                className="aspect-[16/10] w-full object-cover sm:aspect-[21/9]"
+                style={{ objectPosition: stayWithUs.featured.objectPosition }}
+              />
+            </div>
+            <figcaption className="mt-3 font-display text-lg font-bold tracking-[-0.01em] text-forest sm:text-xl">
+              {stayWithUs.featured.label}
+            </figcaption>
+          </figure>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
+            {stayWithUs.spaces.map((space) => (
+              <figure key={space.id}>
+                <div className="overflow-hidden rounded-[1.75rem_2.5rem_1.5rem_2.25rem] ring-1 ring-moss/15">
+                  <img
+                    src={space.image}
+                    alt={space.imageAlt}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 font-display text-lg font-bold tracking-[-0.01em] text-forest sm:text-xl">
+                  {space.label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            {stayWithUs.bookings.map((booking) => (
+              <a
+                key={booking.id}
+                href={booking.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex rounded-full bg-forest px-5 py-2.5 font-display text-sm font-bold tracking-[-0.01em] text-saffron transition hover:bg-moss"
+              >
+                {booking.label}
+              </a>
+            ))}
+          </div>
+        </Section>
+      </section>
+
+      <section
         id="updates"
         className="relative -mt-[1.75rem] scroll-mt-24 overflow-hidden pt-[1.75rem]"
       >
@@ -140,7 +219,7 @@ export function Home() {
             {updates.map((item) => (
               <article
                 key={item.id}
-                className="rounded-2xl bg-cream shadow-sm ring-1 ring-moss/15"
+                className="flex flex-col rounded-2xl bg-cream shadow-sm ring-1 ring-moss/15"
               >
                 <LeafFrame className="overflow-visible p-2 pb-0">
                   <img
@@ -149,14 +228,24 @@ export function Home() {
                     className="h-48 w-full rounded-xl object-cover"
                   />
                 </LeafFrame>
-                <div className="p-5 pt-3">
+                <div className="flex flex-1 flex-col p-5 pt-3">
                   <p className="font-display text-sm font-bold tracking-[-0.01em] text-ochre">
                     {item.date}
                   </p>
                   <h3 className={cardTitleClass}>{item.title}</h3>
-                  <p className="mt-2 font-display text-base leading-relaxed tracking-[-0.01em] text-soil">
+                  <p className="mt-2 flex-1 font-display text-base leading-relaxed tracking-[-0.01em] text-soil">
                     {item.blurb}
                   </p>
+                  {"cta" in item && item.cta ? (
+                    <a
+                      href={item.cta.href}
+                      target={item.cta.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.cta.href.startsWith("http") ? "noreferrer" : undefined}
+                      className="mt-4 inline-flex w-fit rounded-full bg-forest px-4 py-2 font-display text-sm font-bold tracking-[-0.01em] text-saffron transition hover:bg-moss"
+                    >
+                      {item.cta.label}
+                    </a>
+                  ) : null}
                 </div>
               </article>
             ))}

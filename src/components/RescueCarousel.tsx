@@ -92,7 +92,7 @@ export function RescueCarousel({ slides }: RescueCarouselProps) {
           </button>
 
           <figure className="flex min-w-0 flex-col items-center text-center">
-            <div className="relative mx-auto w-[min(100%,18rem)] sm:w-[min(100%,22rem)]">
+            <div className="relative mx-auto w-[min(100%,22rem)] sm:w-[min(100%,28rem)]">
               <img
                 key={current.id}
                 src={current.image}
@@ -149,7 +149,7 @@ export function RescueCarousel({ slides }: RescueCarouselProps) {
               <img
                 src={slide.image}
                 alt=""
-                className="h-12 w-12 object-cover sm:h-14 sm:w-14"
+                className="h-14 w-14 object-cover sm:h-16 sm:w-16"
               />
             </button>
           ))}

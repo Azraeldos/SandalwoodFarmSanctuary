@@ -32,7 +32,7 @@ export const whatWeDo = {
       title: "Advocate",
       icon: "megaphone" as const,
       blurb:
-        "We speak up for kinder farming and keep the farm open. A place neighbors can gather, learn, and belong.",
+        "We speak up for kinder ethical farming and keep the farm open. A place neighbors can gather, learn, and belong.",
     },
   ],
 }
@@ -40,42 +40,43 @@ export const whatWeDo = {
 export const animals = [
   {
     id: "alpaca-2",
-    name: "Alpaca",
+    name: "Marigold",
     species: "Alpaca",
     image: asset("alpca2.jpg"),
     story:
-      "The mother of our other alpacas — they were rescued together and now share a forever home here.",
+      "The gentle matriarch of our alpaca family. Marigold arrived with her daughters and now leads them through quiet days of grazing, grooming, and keeping watch over the pasture.",
   },
   {
     id: "alpaca-3",
-    name: "Alpaca",
+    name: "Clover",
     species: "Alpaca",
     image: asset("alpca3.jpg"),
     story:
-      "Rescued with her mother and sister — now settled into life at the sanctuary.",
+      "Curious and soft-spoken, Clover loves to linger near visitors and stay close to her mother and sister. She is settling into sanctuary life with a calm, friendly heart.",
   },
   {
     id: "alpaca-4",
-    name: "Alpaca",
+    name: "Willow",
     species: "Alpaca",
     image: asset("alpca4.jpg"),
     story:
-      "Rescued with her mother and sister — now settled into life at the sanctuary.",
+      "Playful and a little bold, Willow is often the first to investigate a new sound or snack. She shares a forever home here with Marigold and Clover.",
   },
   {
     id: "tortoise",
-    name: "Tortoise",
+    name: "Glendora",
     species: "Tortoise",
-    image: asset("TortiseGarden.jpg"),
-    story: "Placeholder — swap in this tortoise’s name and story when ready.",
+    image: asset("TortiseBelowDeck.jpg"),
+    story:
+      "Glendora came to us from an owner who could no longer care for her. She now spends her days exploring shady spots under the deck and soaking up the garden at her own unhurried pace.",
   },
   {
     id: "goat",
-    name: "Goat",
+    name: "Scout",
     species: "Goat",
     image: asset("goat1.jpg"),
     story:
-      "One of our goat residents — curious, bold, and always ready for a closer look.",
+      "Scout was rescued from a slaughterhouse and found a second chance here. Curious, bold, and full of personality, he is always ready for a closer look and a kind word.",
   },
 ]
 
@@ -96,7 +97,7 @@ export const crops = [
   },
   {
     id: "fruit",
-    name: "Fruit",
+    name: "Fruits",
     image: asset("pumpkins.jpg"),
     imageAlt: "Bright orange pumpkins lined up on log borders in the garden",
     blurb:
@@ -112,36 +113,115 @@ export const crops = [
   },
 ]
 
+export const stayWithUs = {
+  kicker: "Come rest",
+  title: "Stay with us",
+  lede: "Overnight on the land among shared tables, fire circles, hot tub, sauna, and quiet corners for gathering. Wake up beside the gardens and animals, and take on the day.",
+  featured: {
+    id: "pool",
+    label: "Pool",
+    image: asset("pool.jpg"),
+    imageAlt:
+      "Swimming pool framed by garden plants, with lounge chairs and a house beyond",
+    objectPosition: "center 42%",
+  },
+  spaces: [
+    {
+      id: "communal-tables",
+      label: "Communal tables",
+      image: asset("benches.jpg"),
+      imageAlt:
+        "Long outdoor dining tables with benches, chairs, and patio umbrellas on wood chips",
+    },
+    {
+      id: "carved-fireside",
+      label: "Fireside seating",
+      image: asset("chairs.jpg.jpg"),
+      imageAlt:
+        "Carved wooden chairs and a bench around a round fire pit under a shade tree",
+    },
+    {
+      id: "pergola-table",
+      label: "Shaded dining",
+      image: asset("OutsideTable.jpg"),
+      imageAlt:
+        "Weathered wood table under a metal pergola with string lights beside the pool",
+    },
+    {
+      id: "chiminea",
+      label: "Garden fireplace",
+      image: asset("fireplace.jpg"),
+      imageAlt:
+        "Terracotta chiminea with a carved sun face on a sunny patio among plants",
+    },
+    {
+      id: "fire-circle",
+      label: "Fire circle",
+      image: asset("fireCircle.jpg"),
+      imageAlt:
+        "Circular fire pit surrounded by natural wood stump seats in the garden",
+    },
+    {
+      id: "hot-tub",
+      label: "Hot tub & sauna",
+      image: asset("hotTub.jpg"),
+      imageAlt:
+        "Octagonal hot tub and wooden barrel sauna on a patio with a red umbrella",
+    },
+  ],
+  bookings: [
+    {
+      id: "hipcamp",
+      label: "Book on Hipcamp",
+      href: "https://www.hipcamp.com/en-US/land/california-sandalwood-farm-and-sanctuary-xryh5768?adults=1&children=0",
+    },
+    {
+      id: "peerspace",
+      label: "Book on Peerspace",
+      href: "https://www.peerspace.com/ca/pages/listings/69dfdae640b6b658e1f0a60d",
+    },
+    {
+      id: "healing-gardens",
+      label: "Book on Healing Gardens",
+      href: "https://www.healinggardens.co/gardens/sandalwood-farm-and-sanctuary",
+    },
+  ],
+}
+
 export const farmHappenings = {
   kicker: "On the farm",
   title: "Farm Happenings",
-  lede: "Recent work around the farm and a quick way to get seasonal notes in your inbox.",
+  lede: "Upcoming mornings on the land — lend a hand, learn from the soil, or stretch with the sunrise. Sign up where noted, then drop your email below for seasonal updates.",
 }
 
 export const updates = [
   {
-    id: "harvest-carry",
-    date: "Recent",
-    title: "Harvest Day Haul",
-    image: asset("CarryingBounty.png"),
+    id: "alpaca-shelter",
+    date: "8:00 AM",
+    title: "Build Our Alpaca Shelter",
+    image: asset("Alpca1.jpg"),
     blurb:
-      "Arms full of greens from the rows, neighbors carrying crates together after a morning in the beds.",
+      "Come help us build a shelter for Marigold, Clover, and Willow. We will share the plan on site and work together through the morning. Please bring closed-toe shoes, water, sun protection, and work gloves if you have them. Sign up through Volunteer Signup for details and the next build day.",
+    cta: {
+      label: "Sign up to volunteer",
+      href: "https://volunteersignup.org/P3TH3?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+    },
   },
   {
-    id: "meet-the-animals",
-    date: "Recent",
-    title: "Meet The Animals Morning",
-    image: asset("TeachingGroupKids.png"),
-    blurb:
-      "Kids and families gather on the mulch to meet our residents up close. Soft voices, curious hands, and a calm black rabbit at the center.",
-  },
-  {
-    id: "compost-day",
-    date: "Recent",
-    title: "Compost Work Day",
+    id: "cultivating-restoration",
+    date: "8:00 AM",
+    title: "Cultivating Restoration Workshop",
     image: asset("CompostDay.png"),
     blurb:
-      "Bins rinsed, piles turned, and wood chips moved. The unglamorous work that keeps next season’s soil rich.",
+      "Join our Cultivating Restoration workshop and learn the fundamentals of composting, soil management, and tending living ground. A practiced professional will guide the morning with hands-on tips you can take home to your own garden beds.",
+  },
+  {
+    id: "morning-yoga",
+    date: "8:00 AM",
+    title: "Morning Yoga",
+    image: asset("CircleGroupMeeting.jpg"),
+    blurb:
+      "Rise and shine with mother earth. Join us for a gentle morning yoga seminar led by a licensed professional breath, stretch, and settle into the quiet of the farm before the day unfolds.",
   },
 ]
 

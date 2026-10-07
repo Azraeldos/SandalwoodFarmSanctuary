@@ -4,6 +4,7 @@ import { site } from "../data/content"
 const links = [
   { href: "#animals", label: "Meet our residents" },
   { href: "#crops", label: "Produce" },
+  { href: "#stay", label: "Stay with us" },
   { href: "#updates", label: "Farm Happenings" },
   { href: "#donate", label: "Ways to support" },
   { href: "#contact", label: "Contact us" },
